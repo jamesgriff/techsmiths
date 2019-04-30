@@ -87,20 +87,6 @@ body {
         z-index: -1;
     }
 
-    nav ul {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-    }
-
-    nav li {
-        transition: margin-top 0.5s ease;
-        margin-top: -50px;
-    }
-    .menu-checkbox:checked ~ nav li {
-        margin-top: 0;
-    }
-
     nav a {
         display: block;
         padding: 10px;
@@ -108,8 +94,15 @@ body {
 
         text-decoration: none;
         color: white;
-        font-size: 1.5rem;
+        font-size: 1.1rem;
+        font-weight: bold;
         font-family: sans-serif;
+
+        transition: margin-top 0.5s ease;
+        margin-top: -50px;
+    }
+    .menu-checkbox:checked ~ nav a {
+        margin-top: 0;
     }
 }
 
@@ -144,18 +137,15 @@ body {
     }
 
 
-    nav ul {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-    }
-
-    nav li {
-        display: inline-block;
-        margin-right: 10px;
+    nav {
+        display: flex;
+        flex-direction: row;
     }
 
     nav a {
+        display: block;
+
+        margin-right: 10px;
         padding: 10px 10px;
 
         text-decoration: none;
@@ -163,10 +153,13 @@ body {
         font-size: 1.1rem;
         font-weight: bold;
         font-family: sans-serif;
+
+        border-top: 4px solid transparent;
+        border-bottom: 4px solid transparent;
     }
 
     nav a.selected, nav a:hover {
-        border-top: 4px solid #ffc100;
+        border-top-color: #ffc100;
     }
 }
 
