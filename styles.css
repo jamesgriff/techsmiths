@@ -20,8 +20,8 @@ body {
 
 /* NAV BAR */
 /* (mobile) */
-@media (max-width: 650px) {
-    header {
+@media (max-width: 650px), (max-height: 500px) {
+        header {
         background-color: black;
         height: 70px;
         padding: 10px;
@@ -107,9 +107,10 @@ body {
 }
 
 
+
 /* NAV BAR */
 /* (desktop) */
-@media (min-width: 651px) {
+@media (min-width: 651px) and (min-height: 501px) {
     header {
         background-color: black;
         height: 100px;
