@@ -21,7 +21,7 @@ body {
 /* NAV BAR */
 /* (mobile) */
 @media (max-width: 650px), (max-height: 500px) {
-        header {
+    header {
         background-color: black;
         height: 70px;
         padding: 10px;
@@ -114,7 +114,6 @@ body {
     header {
         background-color: black;
         height: 100px;
-        /* padding: 20px; */
         padding: 20px calc((100vw - 1000px) / 2);
 
         display: flex;
@@ -165,3 +164,64 @@ body {
 }
 
 
+
+/* HOMEPAGE - TAG LINE */
+.tagline-box {
+    width: 100%;
+    min-height: 350px;
+    max-height: 100vw;
+
+    background-color: lightblue;
+    background-image: url('/images/homepage-hero-slate.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 10px;
+
+    z-index: -2; /* TODO: Fix this, it's horrid! */
+    position: relative;
+}
+@media (max-width: 650px), (max-height: 500px) {
+    .tagline-box {
+        height: calc(100vh - 70px);
+    }
+}
+@media (min-width: 651px) and (min-height: 501px) {
+    .tagline-box {
+        height: calc(100vh - 100px);
+    }
+}
+@media (min-width: 800px) {
+    .tagline-box {
+        min-height: 44vw;
+    }
+}
+
+.tagline-phrase {
+    padding: 10px 0;
+    text-align: center;
+}
+.tagline-box span {
+    display: block;
+    text-align: center;
+
+    color: white;
+    font-size: calc(8vw + 10px);
+    font-weight: bold;
+    font-family: sans-serif;
+}
+.tagline-box span.become-a {
+    font-weight: normal;
+}
+
+/* @media (min-width: 800px) { */
+@media (min-aspect-ratio: 4/3) {
+    .tagline-box span {
+        font-size: 6.5vw;
+        display: inline;
+    }
+}
