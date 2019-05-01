@@ -13,6 +13,7 @@ html {
 }
 body {
     margin: 0;
+    background-color: #181818;
 }
 
 
@@ -22,7 +23,7 @@ body {
 /* (mobile) */
 @media (max-width: 650px), (max-height: 500px) {
     header {
-        background-color: black;
+        background-color: #181818;
         height: 70px;
         padding: 10px;
 
@@ -83,7 +84,7 @@ body {
         top: 70px;
         left: 0;
         width: 100%;
-        background-color: black;
+        background-color: #181818;
         z-index: -1;
     }
 
@@ -112,7 +113,7 @@ body {
 /* (desktop) */
 @media (min-width: 651px) and (min-height: 501px) {
     header {
-        background-color: black;
+        background-color: #181818;
         height: 100px;
         padding: 20px calc((100vw - 1000px) / 2);
 
@@ -165,17 +166,12 @@ body {
 
 
 
+
 /* HOMEPAGE - TAG LINE */
-.tagline-box {
+.homepage-hero-box {
     width: 100%;
     min-height: 350px;
     max-height: 100vw;
-
-    background-color: lightblue;
-    background-image: url('/images/homepage-hero-slate.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
 
     display: flex;
     flex-direction: column;
@@ -185,27 +181,43 @@ body {
     z-index: -2; /* TODO: Fix this, it's horrid! */
     position: relative;
 }
-@media (max-width: 650px), (max-height: 500px) {
-    .tagline-box {
+@media (max-width: 650px), (max-height: 500px) {   /* Change height based on Nav Bar's height */
+    .homepage-hero-box {
         height: calc(100vh - 70px);
     }
 }
-@media (min-width: 651px) and (min-height: 501px) {
-    .tagline-box {
+@media (min-width: 651px) and (min-height: 501px) {   /* Change height based on Nav Bar's height */
+    .homepage-hero-box {
         height: calc(100vh - 100px);
     }
 }
 @media (min-width: 800px) {
-    .tagline-box {
+    .homepage-hero-box {
         min-height: 44vw;
     }
 }
 
-.tagline-phrase {
+.homepage-hero-box picture {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.homepage-hero-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+}
+
+.homepage-hero-box .tagline-phrase {
     padding: 10px 0;
     text-align: center;
+    z-index: 1;
 }
-.tagline-box span {
+.homepage-hero-box span {
     display: block;
     text-align: center;
 
@@ -214,14 +226,122 @@ body {
     font-weight: bold;
     font-family: sans-serif;
 }
-.tagline-box span.become-a {
+.homepage-hero-box span.become-a {
     font-weight: normal;
 }
 
 /* @media (min-width: 800px) { */
 @media (min-aspect-ratio: 4/3) {
-    .tagline-box span {
+    .homepage-hero-box span {
         font-size: 6.5vw;
         display: inline;
     }
 }
+@media (min-width: 1001px) {
+    .homepage-hero-box span {
+        font-size: 66px;
+        display: inline;
+    }
+}
+
+
+
+
+/* HOMEPAGE - APPLY NOW */
+.apply-now-container {
+    text-align: center;
+    margin-top: -3vw;
+    padding-bottom: 20px;
+}
+
+.apply-now-container a {
+    display: inline-block;
+    padding: 1.5vw 3vw;
+    background-color: #ffc100;
+    color: #181818;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-size: 3vw;
+}
+@media (max-aspect-ratio: 4/3) {
+    .apply-now-container {
+        margin-top: -4vw;
+    }
+    .apply-now-container a {
+        padding: 1.5vw 4vw;
+        font-size: 5vw;
+    }
+}
+@media (max-aspect-ratio: 1/1) {
+    .apply-now-container {
+        margin-top: -5vw;
+    }
+    .apply-now-container a {
+        padding: 1.5vw 5vw;
+        font-size: 6vw;
+    }
+}
+@media (min-width: 801px) {
+    .apply-now-container {
+        margin-top: -24px;
+    }
+    .apply-now-container a {
+        padding: 12px 24px;
+        font-size: 24px;
+    }
+}
+
+
+
+
+/* GRID OF IMAGES AND TEXT */
+.checkerboard-grid {
+    background-color: #ffc100;
+    overflow: auto;
+}
+
+.checkerboard-grid .row {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+@media (min-width: 360px) {
+    .checkerboard-grid .row {
+        width: calc(100% - 40px);
+    }
+}
+
+.checkerboard-grid picture {
+    display: block;
+    width: 100%;
+}
+.checkerboard-grid img {
+    display: block;
+    width: 100%;
+}
+
+.checkerboard-grid .text {
+    padding: 10px;
+    position: relative;
+    background-color: #181818;
+}
+
+.checkerboard-grid .text h2 {
+    margin: 0;
+    position: absolute;
+    top: calc(-8vw - 10px);
+
+    color: white;
+    font-family: sans-serif;
+    font-size: 8vw;
+}
+
+.checkerboard-grid .text p {
+    margin-top: 0;
+    color: white;
+    font-family: sans-serif;
+}
+
+
