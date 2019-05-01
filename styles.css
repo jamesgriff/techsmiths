@@ -248,24 +248,22 @@ body {
     text-align: center;
 
     color: white;
-    font-size: calc(8vw + 10px);
+    font-size: calc(7vw + 10px);
     font-weight: bold;
     font-family: "Open Sans", sans-serif;
 }
 .homepage-hero-box span.become-a {
     font-weight: 300;
 }
-
-/* @media (min-width: 800px) { */
 @media (min-aspect-ratio: 4/3) {
     .homepage-hero-box span {
-        font-size: 6.5vw;
+        font-size: 6vw;
         display: inline;
     }
 }
 @media (min-width: 1001px) {
     .homepage-hero-box span {
-        font-size: 66px;
+        font-size: 64px;
         display: inline;
     }
 }
@@ -276,38 +274,34 @@ body {
 /* HOMEPAGE - APPLY NOW */
 .apply-now-container {
     text-align: center;
-    margin-top: -3vw;
     padding-bottom: 20px;
 }
-
 .apply-now-container a {
     display: inline-block;
-    padding: 1.5vw 3vw;
     background-color: #ffc100;
     color: #181818;
     text-decoration: none;
     font-family: "Open Sans", sans-serif;
-    font-size: 3vw;
 }
-@media (max-aspect-ratio: 4/3) {
+@media (max-width: 400px) {
+    .apply-now-container {
+        margin-top: -16px;
+    }
+    .apply-now-container a {
+        padding: 8px 16px;
+        font-size: 16px;
+    }
+}
+@media (min-width: 401px) and (max-width: 600px) {
     .apply-now-container {
         margin-top: -4vw;
     }
     .apply-now-container a {
-        padding: 1.5vw 4vw;
-        font-size: 5vw;
+        padding: 2vw 4vw;
+        font-size: 4vw;
     }
 }
-@media (max-aspect-ratio: 1/1) {
-    .apply-now-container {
-        margin-top: -5vw;
-    }
-    .apply-now-container a {
-        padding: 1.5vw 5vw;
-        font-size: 6vw;
-    }
-}
-@media (min-width: 801px) {
+@media (min-width: 601px) {
     .apply-now-container {
         margin-top: -24px;
     }
@@ -321,7 +315,6 @@ body {
 
 /* GRID OF IMAGES AND TEXT */
 .checkerboard-grid {
-    background-color: #ffc100;
     overflow: auto;
 }
 
@@ -379,7 +372,6 @@ body {
 
 .checkerboard-grid .text {
     padding: 10px;
-    background-color: #181818;
 }
 @media (max-width: 600px) {
     .checkerboard-grid .text {
@@ -393,7 +385,6 @@ body {
 }
 
 .checkerboard-grid .text h2 {
-    color: white;
     font-family: "Open Sans", sans-serif;
 }
 @media (max-width: 600px) {
@@ -403,7 +394,7 @@ body {
         left: 0;
         bottom: 100%;
         padding: 10px;
-        
+
         font-size: 8vw;
     }
 }
@@ -414,8 +405,20 @@ body {
 }
 
 .checkerboard-grid .text p {
-    color: white;
     font-family: "Open Sans", sans-serif;
-    line-height: 150%;
+    line-height: 1.5;
 }
 
+
+.checkerboard-grid.grid-white-on-black-on-yellow {
+    background-color: #ffc100;
+}
+.checkerboard-grid.grid-white-on-black-on-yellow .text {
+    background-color: #181818;
+}
+.checkerboard-grid.grid-white-on-black-on-yellow .text h2 {
+    color: white;
+}
+.checkerboard-grid.grid-white-on-black-on-yellow .text p {
+    color: white;
+}
