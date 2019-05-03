@@ -570,51 +570,123 @@ a.button {
     font-size: 1rem
 }
 
-.picture-and-name {
-    max-width: 980px;
-    margin: auto;
-    padding: 0 20px;
 
-    display: flex;
-    flex-direction: row;
-    align-items: flex-end;
+
+
+@media (max-width: 600px) {
+    .picture-name-quote {
+        padding: 10px 20px;
+
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-end;
+    }
+
+    .picture-name-quote picture {
+        display: block;
+        width: 50%;
+    }
+
+    .picture-name-quote .name {
+        width: 50%;
+        font-size: 1.5rem;
+        font-weight: bold;
+        padding-left: 10px;
+        padding-bottom: 10px;
+    }
+
+    .picture-name-quote p.quote {
+        width: 100%;
+        margin: 0;
+        line-height: 1.5;
+    }
+}
+@media (min-width: 601px) {
+    .picture-name-quote {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 0 20px;
+        min-height: 170px;
+    }
+
+    .picture-name-quote picture {
+        display: block;
+        width: 150px;
+    }
+
+    .picture-name-quote .name {
+        margin-top: -150px;
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+    .picture-name-quote:nth-of-type(odd) .name {
+        margin-left: 170px;
+    }
+    .picture-name-quote:nth-of-type(even) .name {
+        margin-right: 170px;
+    }
+
+    .picture-name-quote p.quote {
+        margin: 0;
+        line-height: 1.5;
+    }
+    .picture-name-quote:nth-of-type(odd) p.quote {
+        margin-left: 170px;
+    }
+    .picture-name-quote:nth-of-type(even) p.quote {
+        margin-right: 170px;
+    }
 }
 
-.picture-and-name div {
-    width: 50%;
+.picture-name-quote:nth-of-type(even) {
+    direction: rtl;
+}
+.picture-name-quote:nth-of-type(even) picture {
+    direction: ltr;
+    text-align: right;
+}
+.picture-name-quote:nth-of-type(even) .name {
+    direction: ltr;
+    text-align: right;
+}
+.picture-name-quote:nth-of-type(even) p.quote {
+    direction: ltr;
+    text-align: right;
 }
 
-.picture-and-name img {
-    width: 100%;
+
+.picture-name-quote picture img {
     display: block;
+    width: 100%;
+    max-width: 150px;
     border-radius: 50%;
 }
-
-.picture-and-name .name {
-    font-size: 1.5rem;
-    font-weight: bold;
-    padding-left: 10px;
-    padding-bottom: 10px;
+.picture-name-quote:nth-of-type(odd) picture img {
+    margin-left: auto;
+}
+.picture-name-quote:nth-of-type(even) picture img {
+    margin-right: auto;
 }
 
-.quote {
-    width: 100%;
-    padding: 0 20px;
-    line-height: 1.5;
-}
-.quote::before {
+.picture-name-quote p.quote::before {
     content: '“';
     font-size: 2rem;
     font-weight: bold;
     vertical-align: bottom;
     padding-right: 5px;
 }
-.quote::after {
+.picture-name-quote p.quote::after {
     content: '”';
     font-size: 2rem;
     font-weight: bold;
     vertical-align: top;
     padding-left: 10px;
 }
-
+@media (min-width: 601px) {
+    .picture-name-quote:nth-of-type(odd) p.quote::after {
+        position: absolute;
+    }
+}
 
