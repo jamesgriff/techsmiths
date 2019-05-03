@@ -371,9 +371,6 @@ body {
     }
 }
 
-/* .checkerboard-grid .text h2 {
-    font-family: "Open Sans", sans-serif;
-} */
 @media (max-width: 600px) {
     .checkerboard-grid .text h2 {
         margin: 0;
@@ -538,6 +535,7 @@ a.button {
 .section > h2 {
     text-align: center;
     font-size: 2rem;
+    padding: 0 20px;
 }
 
 
@@ -571,4 +569,52 @@ a.button {
 .two-columns div p {
     font-size: 1rem
 }
+
+.picture-and-name {
+    max-width: 980px;
+    margin: auto;
+    padding: 0 20px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+.picture-and-name div {
+    width: 50%;
+}
+
+.picture-and-name img {
+    width: 100%;
+    display: block;
+    border-radius: 50%;
+}
+
+.picture-and-name .name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding-left: 10px;
+    padding-bottom: 10px;
+}
+
+.quote {
+    width: 100%;
+    padding: 0 20px;
+    line-height: 1.5;
+}
+.quote::before {
+    content: '“';
+    font-size: 2rem;
+    font-weight: bold;
+    vertical-align: bottom;
+    padding-right: 5px;
+}
+.quote::after {
+    content: '”';
+    font-size: 2rem;
+    font-weight: bold;
+    vertical-align: top;
+    padding-left: 10px;
+}
+
 
