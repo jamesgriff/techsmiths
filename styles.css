@@ -517,6 +517,9 @@ a.button {
 .black-background {
     background-color: #181818;
 }
+.white-background {
+    background-color: #ffffff;
+}
 
 
 
@@ -688,5 +691,25 @@ a.button {
     .picture-name-quote:nth-of-type(odd) p.quote::after {
         position: absolute;
     }
+}
+
+
+
+
+.logos {
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.logos picture {
+    margin: 20px;
+}
+
+.logos picture img {
+    width: 100%;
 }
 
