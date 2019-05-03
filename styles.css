@@ -508,6 +508,9 @@ a.button {
     }
 }
 
+.black-text {
+    color: #181818;
+}
 .white-text {
     color: #ffffff;
 }
