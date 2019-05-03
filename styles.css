@@ -713,3 +713,23 @@ a.button {
     width: 100%;
 }
 
+
+
+footer {
+    text-align: center;
+    background-color: #181818;
+    padding-top: 20px;
+}
+
+.social-link {
+    display: inline-block;
+}
+.social-link img {
+    width: 40px;
+}
+
+.copyright {
+    margin: 0;
+    color: #888;
+    font-size: 0.8rem;
+}
