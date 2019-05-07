@@ -116,7 +116,7 @@ body {
 
     nav a {
         display: block;
-        /* padding: 10px; */
+        padding: 0 10px;
         line-height: 50px;
 
         text-decoration: none;
@@ -358,6 +358,9 @@ body {
 @media (max-width: 600px) {
     .checkerboard-grid .text {
         position: relative;
+    }
+    .checkerboard-grid .text h2 {
+        color: #ffffff;
     }
 }
 @media (min-width: 601px) {
