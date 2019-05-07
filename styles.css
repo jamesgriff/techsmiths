@@ -111,13 +111,13 @@ body {
         left: 0;
         width: 100%;
         background-color: #181818;
-        z-index: -1;
+        z-index: 2;
     }
 
     nav a {
         display: block;
-        padding: 10px;
-        line-height: 30px;
+        /* padding: 10px; */
+        line-height: 50px;
 
         text-decoration: none;
         color: #ffffff;
@@ -125,11 +125,12 @@ body {
         font-weight: bold;
         /* font-family: "Open Sans", sans-serif; */
 
-        transition: margin-top 0.5s ease;
-        margin-top: -50px;
+        transition: height 0.5s ease;
+        height: 0;
+        overflow: hidden;
     }
     .menu-checkbox:checked ~ nav a {
-        margin-top: 0;
+        height: 50px;
     }
 }
 
@@ -204,7 +205,6 @@ body {
     justify-content: center;
     padding: 0 10px;
 
-    z-index: -2; /* TODO: Fix this, it's horrid! */
     position: relative;
 }
 @media (max-width: 650px), (max-height: 500px) {   /* Change height based on Nav Bar's height */
