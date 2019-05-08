@@ -1,1 +1,125 @@
-About page
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <script src="main.js"></script>
+
+        <title>About | Techsmiths</title>
+    </head>
+    <body>
+        <header>
+            <img src="images/logo.svg" class="logo" />
+            
+            <input type="checkbox" id="menu" class="menu-checkbox" />
+            <label for="menu" class="menu-button">
+                <span class="menu-line"></span>
+                <span class="menu-line"></span>
+                <span class="menu-line"></span>
+            </label>
+            <nav>
+                <a href="/">Home</a>
+                <a href="/apply" class="selected">Apply</a>
+                <a href="/hire">Hire</a>
+                <a href="/about">About</a>
+                <a href="/contact">Contact</a>
+            </nav>
+        </header>
+
+        <div class="section black-background checkerboard-grid grid-no-gap grid-picture-first">
+            <div class="row">
+                <picture>
+                    <source media="(min-width: 601px)" srcset="images/ben-jamie-square-800.jpg" />
+                    <img src="images/ben-jamie-600-450.jpg" style="object-position: 75% center;" />
+                </picture>
+                <div class="text white-text black-background">
+                    <h2>About</h2>
+                    <h3>Training the latest generation of software developers</h3>
+                    <p>You’re invited to take control of your future by joining our software development courses. We were founded on the principle that great software developers can come from any background. With years over experience training graduates in software development under our belts we are applying that same experience to people who have no previous experience with development but have the will to learn.</p>
+                    <p>As a part of the training we guarantee a job placement after the bootcamp. </p>
+                    <p>Explore our course today and get in touch with any questions.</p>
+
+                    <div class="button-row button-row-gap-above">
+                        <a href="/contact" class="button button-yellow-on-black-on-black">Get in touch</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section yellow-background">
+            <h2>Our Team</h2>
+        </div>
+
+        <div class="section white-background">
+            <h2>Companies we've worked with</h2>
+
+            <div class="logos">
+                <picture>
+                    <img src="images/logo-nspcc.png">
+                </picture>
+                <picture>
+                    <img src="images/logo-altran.png">
+                </picture>
+                <picture>
+                    <img src="images/logo-squareenix.png">
+                </picture>
+                <picture>
+                    <img src="images/logo-anthonynolan.png">
+                </picture>
+                <picture>
+                    <img src="images/logo-softwire.png">
+                </picture>
+                <picture>
+                    <img src="images/logo-icaew.png">
+                </picture>
+            </div>
+        </div>
+
+        <div class="section yellow-background">
+            <h2>Meet our recent Techsmiths</h2>
+
+            <div class="picture-name-quote">
+                <picture>
+                    <img src="images/jess-square-150.jpg">
+                </picture>
+                <div class="name">Jess</div>
+                <p class="quote">
+                    The best thing about the course is that it is solely focused on teaching and training us, not about how much I already knew or had done. I didn’t have any prior knowledge on programming or coding, but they saw I was smart, good at logical thinking and a fast learner and they taught me the rest through a 12 week bootcamp.
+                </p>
+            </div>
+
+            <div class="picture-name-quote">
+                <picture>
+                    <img src="images/tom-square-150.jpg">
+                </picture>
+                <div class="name">Tom</div>
+                <p class="quote">
+                    The teaching was done by professionals who really knew what they were talking about and were super helpful. The tasks that we were given to do were fun and challenging with a good learning curve.
+                </p>
+            </div>
+
+            <div class="picture-name-quote">
+                <picture>
+                    <img src="images/ben-square-150.jpg">
+                </picture>
+                <div class="name">Ben</div>
+                <p class="quote">
+                    Rather than drip-feeding you an answer, you’re encouraged to think for yourself to come up with your own ideas and improve your own skills. It’s likely that you’ll make a few mistakes along the way, but the excellent mentors help guide you towards a sensible solution. I would strongly recommend this course to anyone looking to get into the software development industry.
+                </p>
+            </div>
+        </div>
+
+        
+
+        <footer>
+            <a class="social-link" href="https://twitter.com/TechsmithsUK">
+                <img src="images/twitter-logo.svg">
+            </a>
+            <p class="copyright">
+                © 2019 Softwire Technology Limited. All rights reserved.
+            </p>
+        </footer>
+
+    </body>
+</html>

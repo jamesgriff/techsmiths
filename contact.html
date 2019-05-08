@@ -1,1 +1,69 @@
-Contact page
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <script src="main.js"></script>
+
+        <title>Contact | Techsmiths</title>
+    </head>
+    <body>
+        <header>
+            <img src="images/logo.svg" class="logo" />
+            
+            <input type="checkbox" id="menu" class="menu-checkbox" />
+            <label for="menu" class="menu-button">
+                <span class="menu-line"></span>
+                <span class="menu-line"></span>
+                <span class="menu-line"></span>
+            </label>
+            <nav>
+                <a href="/" class="selected">Home</a>
+                <a href="/apply">Apply</a>
+                <a href="/hire">Hire</a>
+                <a href="/about">About</a>
+                <a href="/contact">Contact</a>
+            </nav>
+        </header>
+
+        <div class="section black-background">
+            <div class="medium-width-block white-text">
+                <h1>Contact us</h1>
+                <p>
+                    Techsmiths,<br />
+                    Unit 110 Highgate Studios,<br />
+                    53-79 Highgate Rd,<br />
+                    London<br />
+                    NW5 1TL, UK
+                </p>
+                <p><a href="mailto:info@techsmiths.uk">info@techsmiths.uk</a></p>
+                <p><a href="tel:+442074857500">020 7485 7500</a></p>
+
+                <div class="contact-us-form" id="contact-us-form">
+                    <input type="text" id="contact-us-form-name" placeholder="Name" />
+                    <input type="email" id="contact-us-form-email" placeholder="Email" />
+                    <textarea rows="6" id="contact-us-form-message" placeholder="Message"></textarea>
+                    <button type="button" class="spinner" onclick="submitContactUsForm();">Send</button>
+                    <div class="error-message">Sorry, that didn't work.<br />Please try emailing us at <a href="mailto:info@techsmiths.uk">info@techsmiths.uk</a></div>
+                </div>
+
+                <iframe
+                    class="map"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2480.781419095727!2d-0.14646968371981772!3d51.5539069796428!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761afef738a5cb%3A0x9c8b9735a1534805!2sSoftwire!5e0!3m2!1sen!2suk!4v1557317054169!5m2!1sen!2suk"
+                    frameborder="0" allowfullscreen="false"
+                ></iframe>
+            </div>
+        </div>
+
+        <footer>
+            <a class="social-link" href="https://twitter.com/TechsmithsUK">
+                <img src="images/twitter-logo.svg">
+            </a>
+            <p class="copyright">
+                © 2019 Softwire Technology Limited. All rights reserved.
+            </p>
+        </footer>
+
+    </body>
+</html>
