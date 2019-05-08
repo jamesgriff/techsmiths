@@ -51,39 +51,37 @@
             <a href="/apply" class="button button-black-on-yellow-on-black">Apply Now</a>
         </div> -->
 
-        <div class="section yellow-background">
-            <div class="checkerboard-grid grid-text-first">
-                <div class="row">
-                    <picture>
-                        <source media="(min-width: 601px)" srcset="images/alex-square-600.jpg" />
-                        <img src="images/alex-letterbox-560-187.jpg" />
-                    </picture>
-                    <div class="text white-text black-background">
-                        <h2>What we teach</h2>
-                        <p>The Techsmiths programme is designed by industry-leading engineers, to teach all of the skills you need to contribute to a wide range of projects.  Software development is the main focus, and we’ll teach you how to work with some of the most popular languages at the moment – but it doesn’t stop there.  You’ll learn how to plan and design solutions, manage projects, test things effectively.  Techsmiths also get experience deploying, monitoring and upgrading software – a vital part of turning your great ideas into software that improves the world.</p>
-                    </div>
+        <div class="section yellow-background checkerboard-grid grid-text-first">
+            <div class="row">
+                <picture>
+                    <source media="(min-width: 601px)" srcset="images/alex-square-600.jpg" />
+                    <img src="images/alex-letterbox-560-187.jpg" />
+                </picture>
+                <div class="text white-text black-background">
+                    <h2>What we teach</h2>
+                    <p>The Techsmiths programme is designed by industry-leading engineers, to teach all of the skills you need to contribute to a wide range of projects.  Software development is the main focus, and we’ll teach you how to work with some of the most popular languages at the moment – but it doesn’t stop there.  You’ll learn how to plan and design solutions, manage projects, test things effectively.  Techsmiths also get experience deploying, monitoring and upgrading software – a vital part of turning your great ideas into software that improves the world.</p>
                 </div>
+            </div>
 
-                <div class="row">
-                    <picture>
-                        <source media="(min-width: 601px)" srcset="images/lorraine-square-470.jpg" />
-                        <img src="images/lorraine-letterbox-560-187.jpg" style="object-position: 75% center;" />
-                    </picture>
-                    <div class="text white-text black-background">
-                        <h2>How we teach it</h2>
-                        <p>Our 12 week bootcamp gives you the opportunity to work on a number of short projects and training exercises, increasing in scale and complexity over the course of the programme.  We have very low student:coach ratios, which means you’ll get lots of 1:1 attention from an expert software developer.  We like to work in small groups, collaboratively solving difficult problems and having lots of fun on the way!</p>
-                    </div>
+            <div class="row">
+                <picture>
+                    <source media="(min-width: 601px)" srcset="images/lorraine-square-470.jpg" />
+                    <img src="images/lorraine-letterbox-560-187.jpg" style="object-position: 75% center;" />
+                </picture>
+                <div class="text white-text black-background">
+                    <h2>How we teach it</h2>
+                    <p>Our 12 week bootcamp gives you the opportunity to work on a number of short projects and training exercises, increasing in scale and complexity over the course of the programme.  We have very low student:coach ratios, which means you’ll get lots of 1:1 attention from an expert software developer.  We like to work in small groups, collaboratively solving difficult problems and having lots of fun on the way!</p>
                 </div>
+            </div>
 
-                <div class="row">
-                    <picture>
-                        <source media="(min-width: 601px)" srcset="images/yemi-arpan-square-470.jpg" />
-                        <img src="images/yemi-arpan-tim-letterbox-560-187.jpg" style="object-position: 81% center;" />
-                    </picture>
-                    <div class="text white-text black-background">
-                        <h2>What's involved</h2>
-                        <p>Our 12 week bootcamp is completely free, and will set you up for a career in the country’s fastest growing sector.  You’ll graduate from the bootcamp as a well-rounded developer with a strong portfolio, a well-paying job lined up for you, and all the skills you need to excel as a developer. For the first 15 months of your career, we’ll find you jobs with some of the top technical companies in the country, and provide constant mentoring and support.</p>
-                    </div>
+            <div class="row">
+                <picture>
+                    <source media="(min-width: 601px)" srcset="images/yemi-arpan-square-470.jpg" />
+                    <img src="images/yemi-arpan-tim-letterbox-560-187.jpg" style="object-position: 81% center;" />
+                </picture>
+                <div class="text white-text black-background">
+                    <h2>What's involved</h2>
+                    <p>Our 12 week bootcamp is completely free, and will set you up for a career in the country’s fastest growing sector.  You’ll graduate from the bootcamp as a well-rounded developer with a strong portfolio, a well-paying job lined up for you, and all the skills you need to excel as a developer. For the first 15 months of your career, we’ll find you jobs with some of the top technical companies in the country, and provide constant mentoring and support.</p>
                 </div>
             </div>
         </div>
@@ -100,8 +98,27 @@
             </div>
         </div>
 
-        <div class="section yellow-background">
+        <div class="section yellow-background checkerboard-grid grid-no-gap grid-picture-first">
+            <div class="row">
+                <picture>
+                    <source media="(min-width: 601px)" srcset="images/james-square-600.jpg" />
+                    <img src="images/james-letterbox-560-187.jpg" />
+                </picture>
+                <div class="text white-text black-background">
+                    <h2>Get in touch</h2>
+                    <p>If you're interested in applying or just want to know more, drop us a line here!</p>
+                    <p><a href="mailto:info@techsmiths.uk">info@techsmiths.uk</a></p>
+                    <p><a href="tel:+442074857500">020 7485 7500</a></p>
 
+                    <div class="contact-us-form" id="contact-us-form">
+                        <input type="text" id="contact-us-form-name" placeholder="Name" />
+                        <input type="email" id="contact-us-form-email" placeholder="Email" />
+                        <textarea rows="6" id="contact-us-form-message" placeholder="Message"></textarea>
+                        <button type="button" class="spinner" onclick="submitContactUsForm();">Send</button>
+                        <div class="error-message">Sorry, that didn't work.<br />Please try emailing us at <a href="mailto:info@techsmiths.uk">info@techsmiths.uk</a></div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <footer>

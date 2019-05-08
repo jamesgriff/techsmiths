@@ -42,6 +42,15 @@ body {
     font-family: "Open Sans", sans-serif;
 }
 
+a {
+    color: inherit;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+
 
 
 
@@ -94,13 +103,13 @@ body {
         transition: all 0.5s ease;
         transform-origin: 92% center;
     }
-    .menu-checkbox:checked ~ .menu-button .menu-line:nth-child(1) {
+    .menu-checkbox:checked ~ .menu-button .menu-line:nth-of-type(1) {
         transform: rotate(-45deg) scale(1.4);
     }
-    .menu-checkbox:checked ~ .menu-button .menu-line:nth-child(2) {
+    .menu-checkbox:checked ~ .menu-button .menu-line:nth-of-type(2) {
         background-color: transparent;
     }
-    .menu-checkbox:checked ~ .menu-button .menu-line:nth-child(3) {
+    .menu-checkbox:checked ~ .menu-button .menu-line:nth-of-type(3) {
         transform: rotate(45deg) scale(1.4);
     }
 
@@ -123,11 +132,13 @@ body {
         color: #ffffff;
         font-size: 1.1rem;
         font-weight: bold;
-        /* font-family: "Open Sans", sans-serif; */
 
         transition: height 0.5s ease;
         height: 0;
         overflow: hidden;
+    }
+    nav a:hover {
+        text-decoration: none; /* need this to override default 'a' behaviour */
     }
     .menu-checkbox:checked ~ nav a {
         height: 50px;
@@ -329,6 +340,9 @@ body {
         justify-content: space-between;
     }
 }
+.checkerboard-grid.grid-no-gap .row {
+    background-color: #181818;
+}
 
 .checkerboard-grid picture {
     display: block;
@@ -339,8 +353,11 @@ body {
     }
 }
 @media (min-width: 601px) {
-    .checkerboard-grid picture {
+    .checkerboard-grid.grid-with-gap picture {
         width: calc(50% - 10px);
+    }
+    .checkerboard-grid.grid-no-gap picture {
+        width: 50%;
     }
 }
 
@@ -364,8 +381,11 @@ body {
     }
 }
 @media (min-width: 601px) {
-    .checkerboard-grid .text {
+    .checkerboard-grid.grid-with-gap .text {
         width: calc(50% - 10px);
+    }
+    .checkerboard-grid.grid-no-gap .text {
+        width: 50%;
     }
 }
 @media (min-width: 801px) {
@@ -392,22 +412,21 @@ body {
 }
 
 .checkerboard-grid .text p {
-    /* font-family: "Open Sans", sans-serif; */
     line-height: 1.5;
 }
 
 
 @media (min-width: 601px) {
-    .checkerboard-grid.grid-picture-first .row:nth-child(odd) {
+    .checkerboard-grid.grid-picture-first .row:nth-of-type(odd) {
         flex-direction: row;
     }
-    .checkerboard-grid.grid-picture-first .row:nth-child(even) {
+    .checkerboard-grid.grid-picture-first .row:nth-of-type(even) {
         flex-direction: row-reverse;
     }
-    .checkerboard-grid.grid-text-first .row:nth-child(odd) {
+    .checkerboard-grid.grid-text-first .row:nth-of-type(odd) {
         flex-direction: row-reverse;
     }
-    .checkerboard-grid.grid-text-first .row:nth-child(even) {
+    .checkerboard-grid.grid-text-first .row:nth-of-type(even) {
         flex-direction: row;
     }
 }
@@ -738,4 +757,87 @@ footer {
     margin: 0;
     color: #888;
     font-size: 0.8rem;
+}
+
+
+
+.contact-us-form {
+    margin: 20px 0;
+}
+
+.contact-us-form input, .contact-us-form textarea {
+    display: block;
+    width: 100%;
+    resize: none;
+    margin: 10px 0;
+    padding: 5px;
+
+    color: #ffffff;
+    background: none;
+    border: none;
+    border-bottom: 1px solid #ffffff;
+
+    font-family: "Open Sans", sans-serif;
+}
+.contact-us-form input::placeholder, .contact-us-form textarea::placeholder {
+    color: #ffffff;
+}
+
+.contact-us-form button {
+    display: block;
+    width: 100px;
+    margin: auto;
+    padding: 10px;
+    position: relative;
+
+    color: #ffffff;
+    background: none;
+    border: 1px solid #ffffff;
+}
+.contact-us-form.sending button, .contact-us-form.success button, .contact-us-form.error button {
+    color: transparent;
+}
+.contact-us-form button::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: calc(50% - 10px);
+    top: calc(50% - 11px);
+}
+.contact-us-form.sending button::after {
+    border: 2px solid #ffffff;
+    border-right: none;
+    border-bottom: none;
+    border-radius: 50%;
+    animation-name: spin;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+.contact-us-form.success button::after {
+    content: '✔️';
+    color: #ffffff;
+}
+.contact-us-form.error button::after {
+    content: '❌';
+    color: #ffffff;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.contact-us-form .error-message {
+    font-size: 0.75rem;
+    text-align: center;
+    visibility: hidden;
+}
+.contact-us-form.error .error-message {
+    visibility: visible;
 }

@@ -58,10 +58,10 @@
             </p>
         </div>
 
-        <div class="section black-background white-text">
+        <div class="section black-background white-text checkerboard-grid grid-text-first">
             <h2>Techsmiths' Skillsets</h2>
 
-            <div class="checkerboard-grid grid-text-first">
+            <!-- <div class=""> -->
                 <div class="row">
                     <picture>
                         <source media="(min-width: 601px)" srcset="images/lowri-emily-josh-square-600.jpg" />
@@ -94,7 +94,7 @@
                         <p>The understanding is far more important than the ability to recall exactly how to do X or Y from the top of your head. Everyone has access to Stack Overflow, Google, etc. whilst they work, but those tools aren’t good at explaining the big picture, or why particular approaches are better than others.  The most valuable employees are the ones who understand the objectives, understand requirements that might not be explicitly listed, and can use their own judgement and experience to research the best way of implementing the detail.</p>
                     </div>
                 </div>
-            </div>
+            <!-- </div> -->
         </div>
 
         <div class="section yellow-background">
@@ -156,8 +156,27 @@
             </div>
         </div>
 
-        <div class="section yellow-background">
+        <div class="section yellow-background checkerboard-grid grid-no-gap grid-picture-first">
+            <div class="row">
+                <picture>
+                    <source media="(min-width: 601px)" srcset="images/james-square-600.jpg" />
+                    <img src="images/james-letterbox-560-187.jpg" />
+                </picture>
+                <div class="text white-text black-background">
+                    <h2>Get in touch</h2>
+                    <p>Interested in hiring software developers from Techsmiths? Get in touch for more details.</p>
+                    <p><a href="mailto:info@techsmiths.uk">info@techsmiths.uk</a></p>
+                    <p><a href="tel:+442074857500">020 7485 7500</a></p>
 
+                    <div class="contact-us-form" id="contact-us-form">
+                        <input type="text" id="contact-us-form-name" placeholder="Name" />
+                        <input type="email" id="contact-us-form-email" placeholder="Email" />
+                        <textarea rows="6" id="contact-us-form-message" placeholder="Message"></textarea>
+                        <button type="button" class="spinner" onclick="submitContactUsForm();">Send</button>
+                        <div class="error-message">Sorry, that didn't work.<br />Please try emailing us at <a href="mailto:info@techsmiths.uk">info@techsmiths.uk</a></div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <footer>
