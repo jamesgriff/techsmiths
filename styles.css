@@ -201,6 +201,9 @@ a:hover {
         border-top: 4px solid transparent;
         border-bottom: 4px solid transparent;
     }
+    nav a:hover {
+        text-decoration: none; /* need this to override default 'a' behaviour */
+    }
 
     nav a.selected, nav a:hover {
         border-top-color: #ffc100;
@@ -213,29 +216,48 @@ a:hover {
 /* HOMEPAGE - TAG LINE */
 .homepage-hero-box {
     width: 100%;
-    min-height: 350px;
-    max-height: 100vw;
+    min-height: 300px;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 0 10px;
+    padding: 0 10px 26px 10px;
 
     position: relative;
 }
+@media (min-aspect-ratio: 4/3) {
+    .homepage-hero-box {
+        min-height: 30vw;
+    }
+}
+@media (min-width: 1001px) {
+    .homepage-hero-box {
+        min-height: 300px;
+    }
+}
+@media (max-width: 400px) {
+    .homepage-hero-box {
+        min-height: 120px;
+    }
+}
+@media (max-aspect-ratio: 4/3) {
+    .homepage-hero-box {
+        min-height: 240px;
+    }
+}
+@media (max-aspect-ratio: 5/4) { /* Portrait */
+    .homepage-hero-box {
+        max-height: 100vw;
+    }
+}
 @media (max-width: 650px), (max-height: 500px) {   /* Change height based on Nav Bar's height */
     .homepage-hero-box {
-        height: calc(100vh - 70px);
+        height: calc(80vh - 70px);
     }
 }
 @media (min-width: 651px) and (min-height: 501px) {   /* Change height based on Nav Bar's height */
     .homepage-hero-box {
-        height: calc(100vh - 100px);
-    }
-}
-@media (min-width: 800px) {
-    .homepage-hero-box {
-        min-height: 44vw;
+        height: calc(80vh - 100px);
     }
 }
 
@@ -264,7 +286,7 @@ a:hover {
     text-align: center;
 
     color: #ffffff;
-    font-size: calc(7vw + 10px);
+    font-size: calc(6vw + 10px);
     font-weight: bold;
 }
 .homepage-hero-box .tagline-small {
@@ -290,7 +312,7 @@ a:hover {
 }
 @media (min-width: 1001px) {
     .homepage-hero-box span {
-        font-size: 64px;
+        font-size: 60px;
         display: inline;
     }
     .homepage-hero-box .tagline-small {
