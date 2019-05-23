@@ -1,1 +1,83 @@
-Application form
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <script src="application-form.js"></script>
+
+        <title>Application form | Techsmiths</title>
+    </head>
+    <body>
+        <header>
+            <a href="/" class="logo-container">
+                <img src="images/logo.svg" class="logo" />
+            </a>
+            
+            <input type="checkbox" id="menu" class="menu-checkbox" />
+            <label for="menu" class="menu-button">
+                <span class="menu-line"></span>
+                <span class="menu-line"></span>
+                <span class="menu-line"></span>
+            </label>
+            <nav>
+                <a href="/">Home</a>
+                <a href="/apply" class="selected">Apply</a>
+                <a href="/hire">Hire</a>
+                <a href="/about">About</a>
+                <a href="/contact">Contact</a>
+            </nav>
+        </header>
+
+        <div class="section black-background white-text">
+            <h2>Application Form</h2>
+
+            <p class="medium-width-text white-text margin-between">
+                Applying for cohort starting June 2019
+            </p>
+            <p class="medium-width-text white-text margin-between">
+                All information given here will be treated as confidential.
+            </p>
+
+            <hr>
+
+            <div class="medium-width-block-narrow-margins application-form">
+                <h3>Personal Details</h3>
+
+                <div class="two-cols">
+                    <input type="text" name="first_name" id="first_name" placeholder="First Name">
+                    <input type="text" name="surname" id="surname" placeholder="Surname">
+                    <input type="text" id="preferred_name" placeholder="How should we address you? (optional)">
+                    <input type="text" id="preferred_pronoun" placeholder="Preferred pronoun (optional)">
+                    <input type="email" name="email" id="email_address" placeholder="Email address">
+                    <input type="tel" name="phone" id="phone_number" placeholder="Phone number">
+                    
+                    <div class="half-width-label">Do you require a work permit?</div>
+                    <div class="half-width-options">
+                        <label class="radio-button-label">
+                            <input type="radio" name="work_permit" value="yes">
+                            Yes
+                        </label>
+                        <label class="radio-button-label">
+                            <input type="radio" name="work_permit" value="no" checked>
+                            No
+                        </label>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+        <footer>
+            <a class="social-link" href="https://twitter.com/TechsmithsUK">
+                <img src="images/twitter-logo.svg">
+            </a>
+            <p class="copyright">
+                © 2019 Softwire Technology Limited. All rights reserved.
+            </p>
+        </footer>
+
+    </body>
+</html>
