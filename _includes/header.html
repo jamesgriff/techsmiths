@@ -1,0 +1,24 @@
+<header>
+    <a href="/" class="logo-container">
+        <img src="images/logo.svg" class="logo" alt="Techsmiths logo" />
+    </a>
+    
+    <input type="checkbox" id="menu" class="menu-checkbox" />
+    <label for="menu" class="menu-button">
+        <span class="menu-line"></span>
+        <span class="menu-line"></span>
+        <span class="menu-line"></span>
+    </label>
+    <nav>
+        <a href="/" {% if page.url == "/" %} class="selected" {% endif %} >Home</a>
+        <div class="nav-parent">
+            <a href="/apply" class="nav-parent {% if page.url == "/apply.html" %} selected{% endif %} ">Apply</a>
+            <div class="nav-children">
+                <a href="/application-form" {% if page.url == "/application-form.html" %} class="selected" {% endif %} >Application Form</a>
+            </div>
+        </div>
+        <a href="/hire" {% if page.url == "/hire.html" %} class="selected" {% endif %} >Hire</a>
+        <a href="/about" {% if page.url == "/about.html" %} class="selected" {% endif %} >About</a>
+        <a href="/contact" {% if page.url == "/contact.html" %} class="selected" {% endif %} >Contact</a>
+    </nav>
+</header>

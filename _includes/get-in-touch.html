@@ -1,0 +1,24 @@
+<div class="section yellow-background checkerboard-grid grid-no-gap grid-picture-first">
+    <div class="row">
+        <picture>
+            <source media="(min-width: 601px)" srcset="images/james-square-600.jpg" />
+            <img src="images/james-letterbox-560-187.jpg" alt="" /><!-- alt="" because this image is just for decoration -->
+        </picture>
+        <div class="text white-text black-background">
+            <h2>Get in touch</h2>
+            <p>
+                {{ include.content }}
+            </p>
+            <p><a href="mailto:info@techsmiths.uk">info@techsmiths.uk</a></p>
+            <p><a href="tel:+442074857500">020 7485 7500</a></p>
+
+            <div class="contact-us-form" id="contact-us-form">
+                <input type="text" id="contact-us-form-name" placeholder="Name" />
+                <input type="email" id="contact-us-form-email" placeholder="Email" />
+                <textarea rows="6" id="contact-us-form-message" placeholder="Message"></textarea>
+                <button type="button" class="spinner" onclick="submitContactUsForm();">Send</button>
+                <div class="error-message">Sorry, that didn't work.<br />Please try emailing us at <a href="mailto:info@techsmiths.uk">info@techsmiths.uk</a></div>
+            </div>
+        </div>
+    </div>
+</div>

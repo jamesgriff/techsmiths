@@ -1,3 +1,6 @@
+---
+---
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -9,30 +12,7 @@
         <title>Hire | Techsmiths</title>
     </head>
     <body>
-        <header>
-            <a href="/" class="logo-container">
-                <img src="images/logo.svg" class="logo" alt="Techsmiths logo" />
-            </a>
-            
-            <input type="checkbox" id="menu" class="menu-checkbox" />
-            <label for="menu" class="menu-button">
-                <span class="menu-line"></span>
-                <span class="menu-line"></span>
-                <span class="menu-line"></span>
-            </label>
-            <nav>
-                <a href="/">Home</a>
-                <div class="nav-parent">
-                    <a href="/apply" class="nav-parent">Apply</a>
-                    <div class="nav-children">
-                        <a href="/application-form" >Application Form</a>
-                    </div>
-                </div>
-                <a href="/hire" class="selected">Hire</a>
-                <a href="/about">About</a>
-                <a href="/contact">Contact</a>
-            </nav>
-        </header>
+        {% include header.html %}
 
         <div class="homepage-hero-box">
             <picture>
@@ -66,132 +46,47 @@
         <div class="section black-background white-text checkerboard-grid grid-with-gap grid-text-first">
             <h2>Techsmiths' Skillsets</h2>
 
-            <!-- <div class=""> -->
-                <div class="row">
-                    <picture>
-                        <source media="(min-width: 601px)" srcset="images/lowri-emily-josh-square-600.jpg" />
-                        <img src="images/lowri-emily-josh-letterbox-560-187.jpg" style="object-position: 63% center;" alt="" /><!-- alt="" because this image is just for decoration -->
-                    </picture>
-                    <div class="text black-text yellow-background">
-                        <h2>Versatility</h2>
-                        <p>Most businesses require staff that can understand the full lifecycle, and transition between different roles as required.  Managing a small project, setting up a CI pipeline, designing a new page, writing high quality code, system testing a product – we’d expect our technical staff to be able to do any of those, and it makes resourcing far more difficult if all of your staff are one-dimensional.  We believe in truly cross-functional teams, and that comes from a diverse skill set. All that being said, the core competency/role is still Software Engineer!</p>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <picture>
-                        <source media="(min-width: 601px)" srcset="images/michael-square-600.jpg" />
-                        <img src="images/michael-letterbox-560-187.jpg" alt="" /><!-- alt="" because this image is just for decoration -->
-                    </picture>
-                    <div class="text black-text yellow-background">
-                        <h2>Soft Skills</h2>
-                        <p>Seems small, but makes a huge difference to how successful delivery team members are.  We don't just select candidates based on their potential as a developer but what other expertise they can bring to the table. That being said, we consider it an essential part of training to bring out the best in people and install some great habits.  This is all achieved by better diversity of recruitment – something we take very seriously, and have strong supporting networks to help with.</p>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <picture>
-                        <source media="(min-width: 601px)" srcset="images/rita-jenny-square-600.jpg" />
-                        <img src="images/rita-jenny-letterbox-560-187.jpg" style="object-position: 20% center;" alt="" /><!-- alt="" because this image is just for decoration -->
-                    </picture>
-                    <div class="text black-text yellow-background">
-                        <h2>Genuine Understanding</h2>
-                        <p>The understanding is far more important than the ability to recall exactly how to do X or Y from the top of your head. Everyone has access to Stack Overflow, Google, etc. whilst they work, but those tools aren’t good at explaining the big picture, or why particular approaches are better than others.  The most valuable employees are the ones who understand the objectives, understand requirements that might not be explicitly listed, and can use their own judgement and experience to research the best way of implementing the detail.</p>
-                    </div>
-                </div>
-            <!-- </div> -->
-        </div>
-
-        <div class="section yellow-background">
-            <h2>Meet our recent Techsmiths</h2>
-
-            <div class="picture-name-quote">
-                <picture>
-                    <img src="images/jess-square-150.jpg" alt="Photo of Jess">
-                </picture>
-                <div class="name">Jess</div>
-                <p class="quote">
-                    The best thing about the course is that it is solely focused on teaching and training us, not about how much I already knew or had done. I didn’t have any prior knowledge on programming or coding, but they saw I was smart, good at logical thinking and a fast learner and they taught me the rest through a 12 week bootcamp.
-                </p>
-            </div>
-
-            <div class="picture-name-quote">
-                <picture>
-                    <img src="images/tom-square-150.jpg" alt="Photo of Tom">
-                </picture>
-                <div class="name">Tom</div>
-                <p class="quote">
-                    The teaching was done by professionals who really knew what they were talking about and were super helpful. The tasks that we were given to do were fun and challenging with a good learning curve.
-                </p>
-            </div>
-
-            <div class="picture-name-quote">
-                <picture>
-                    <img src="images/ben-square-150.jpg" alt="Photo of Ben">
-                </picture>
-                <div class="name">Ben</div>
-                <p class="quote">
-                    Rather than drip-feeding you an answer, you’re encouraged to think for yourself to come up with your own ideas and improve your own skills. It’s likely that you’ll make a few mistakes along the way, but the excellent mentors help guide you towards a sensible solution. I would strongly recommend this course to anyone looking to get into the software development industry.
-                </p>
-            </div>
-        </div>
-
-        <div class="section white-background">
-            <h2>Companies we've worked with</h2>
-
-            <div class="logos">
-                <picture>
-                    <img src="images/logo-nspcc.png" alt="NSPCC logo">
-                </picture>
-                <picture>
-                    <img src="images/logo-altran.png" alt="Altran logo">
-                </picture>
-                <picture>
-                    <img src="images/logo-squareenix.png" alt="Square Enix logo">
-                </picture>
-                <picture>
-                    <img src="images/logo-anthonynolan.png" alt="Anthony Nolan logo">
-                </picture>
-                <picture>
-                    <img src="images/logo-softwire.png" alt="Softwire logo">
-                </picture>
-                <picture>
-                    <img src="images/logo-icaew.png" alt="Institute of Chartered Accountants in England and Wales logo">
-                </picture>
-            </div>
-        </div>
-
-        <div class="section yellow-background checkerboard-grid grid-no-gap grid-picture-first">
             <div class="row">
                 <picture>
-                    <source media="(min-width: 601px)" srcset="images/james-square-600.jpg" />
-                    <img src="images/james-letterbox-560-187.jpg" alt="" /><!-- alt="" because this image is just for decoration -->
+                    <source media="(min-width: 601px)" srcset="images/lowri-emily-josh-square-600.jpg" />
+                    <img src="images/lowri-emily-josh-letterbox-560-187.jpg" style="object-position: 63% center;" alt="" /><!-- alt="" because this image is just for decoration -->
                 </picture>
-                <div class="text white-text black-background">
-                    <h2>Get in touch</h2>
-                    <p>Interested in hiring software developers from Techsmiths? Get in touch for more details.</p>
-                    <p><a href="mailto:info@techsmiths.uk">info@techsmiths.uk</a></p>
-                    <p><a href="tel:+442074857500">020 7485 7500</a></p>
+                <div class="text black-text yellow-background">
+                    <h2>Versatility</h2>
+                    <p>Most businesses require staff that can understand the full lifecycle, and transition between different roles as required.  Managing a small project, setting up a CI pipeline, designing a new page, writing high quality code, system testing a product – we’d expect our technical staff to be able to do any of those, and it makes resourcing far more difficult if all of your staff are one-dimensional.  We believe in truly cross-functional teams, and that comes from a diverse skill set. All that being said, the core competency/role is still Software Engineer!</p>
+                </div>
+            </div>
 
-                    <div class="contact-us-form" id="contact-us-form">
-                        <input type="text" id="contact-us-form-name" placeholder="Name" />
-                        <input type="email" id="contact-us-form-email" placeholder="Email" />
-                        <textarea rows="6" id="contact-us-form-message" placeholder="Message"></textarea>
-                        <button type="button" class="spinner" onclick="submitContactUsForm();">Send</button>
-                        <div class="error-message">Sorry, that didn't work.<br />Please try emailing us at <a href="mailto:info@techsmiths.uk">info@techsmiths.uk</a></div>
-                    </div>
+            <div class="row">
+                <picture>
+                    <source media="(min-width: 601px)" srcset="images/michael-square-600.jpg" />
+                    <img src="images/michael-letterbox-560-187.jpg" alt="" /><!-- alt="" because this image is just for decoration -->
+                </picture>
+                <div class="text black-text yellow-background">
+                    <h2>Soft Skills</h2>
+                    <p>Seems small, but makes a huge difference to how successful delivery team members are.  We don't just select candidates based on their potential as a developer but what other expertise they can bring to the table. That being said, we consider it an essential part of training to bring out the best in people and install some great habits.  This is all achieved by better diversity of recruitment – something we take very seriously, and have strong supporting networks to help with.</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <picture>
+                    <source media="(min-width: 601px)" srcset="images/rita-jenny-square-600.jpg" />
+                    <img src="images/rita-jenny-letterbox-560-187.jpg" style="object-position: 20% center;" alt="" /><!-- alt="" because this image is just for decoration -->
+                </picture>
+                <div class="text black-text yellow-background">
+                    <h2>Genuine Understanding</h2>
+                    <p>The understanding is far more important than the ability to recall exactly how to do X or Y from the top of your head. Everyone has access to Stack Overflow, Google, etc. whilst they work, but those tools aren’t good at explaining the big picture, or why particular approaches are better than others.  The most valuable employees are the ones who understand the objectives, understand requirements that might not be explicitly listed, and can use their own judgement and experience to research the best way of implementing the detail.</p>
                 </div>
             </div>
         </div>
 
-        <footer>
-            <a class="social-link" href="https://twitter.com/TechsmithsUK">
-                <img src="images/twitter-logo.svg" alt="Follow Techsmiths on Twitter">
-            </a>
-            <p class="copyright">
-                © 2019 Softwire Technology Limited. All rights reserved.
-            </p>
-        </footer>
+        {% include our-recent-techsmiths.html %}
+
+        {% include companies-weve-worked-with.html %}
+
+        {% include get-in-touch.html content="Interested in hiring software developers from Techsmiths? Get in touch for more details." %}
+
+        {% include footer.html %}
 
     </body>
 </html>

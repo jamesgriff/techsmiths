@@ -1,3 +1,6 @@
+---
+---
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -9,30 +12,7 @@
         <title>Apply | Techsmiths</title>
     </head>
     <body>
-        <header>
-            <a href="/" class="logo-container">
-                <img src="images/logo.svg" class="logo" alt="Techsmiths logo" />
-            </a>
-            
-            <input type="checkbox" id="menu" class="menu-checkbox" />
-            <label for="menu" class="menu-button">
-                <span class="menu-line"></span>
-                <span class="menu-line"></span>
-                <span class="menu-line"></span>
-            </label>
-            <nav>
-                <a href="/">Home</a>
-                <div class="nav-parent">
-                    <a href="/apply" class="nav-parent selected">Apply</a>
-                    <div class="nav-children">
-                        <a href="/application-form" >Application Form</a>
-                    </div>
-                </div>
-                <a href="/hire">Hire</a>
-                <a href="/about">About</a>
-                <a href="/contact">Contact</a>
-            </nav>
-        </header>
+        {% include header.html %}
 
         <div class="homepage-hero-box">
             <picture>
@@ -103,37 +83,9 @@
             </div>
         </div>
 
-        <div class="section yellow-background checkerboard-grid grid-no-gap grid-picture-first">
-            <div class="row">
-                <picture>
-                    <source media="(min-width: 601px)" srcset="images/james-square-600.jpg" />
-                    <img src="images/james-letterbox-560-187.jpg" alt="" /><!-- alt="" because this image is just for decoration -->
-                </picture>
-                <div class="text white-text black-background">
-                    <h2>Get in touch</h2>
-                    <p>If you're interested in applying or just want to know more, drop us a line here!</p>
-                    <p><a href="mailto:info@techsmiths.uk">info@techsmiths.uk</a></p>
-                    <p><a href="tel:+442074857500">020 7485 7500</a></p>
+        {% include get-in-touch.html content="If you're interested in applying or just want to know more, drop us a line here!" %}
 
-                    <div class="contact-us-form" id="contact-us-form">
-                        <input type="text" id="contact-us-form-name" placeholder="Name" />
-                        <input type="email" id="contact-us-form-email" placeholder="Email" />
-                        <textarea rows="6" id="contact-us-form-message" placeholder="Message"></textarea>
-                        <button type="button" class="spinner" onclick="submitContactUsForm();">Send</button>
-                        <div class="error-message">Sorry, that didn't work.<br />Please try emailing us at <a href="mailto:info@techsmiths.uk">info@techsmiths.uk</a></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <footer>
-            <a class="social-link" href="https://twitter.com/TechsmithsUK">
-                <img src="images/twitter-logo.svg" alt="Follow Techsmiths on Twitter">
-            </a>
-            <p class="copyright">
-                © 2019 Softwire Technology Limited. All rights reserved.
-            </p>
-        </footer>
+        {% include footer.html %}
 
     </body>
 </html>
