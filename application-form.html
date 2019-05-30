@@ -11,7 +11,7 @@
     <body>
         <header>
             <a href="/" class="logo-container">
-                <img src="images/logo.svg" class="logo" />
+                <img src="images/logo.svg" class="logo" alt="Techsmiths logo" />
             </a>
             
             <input type="checkbox" id="menu" class="menu-checkbox" />
@@ -22,7 +22,12 @@
             </label>
             <nav>
                 <a href="/">Home</a>
-                <a href="/apply" class="selected">Apply</a>
+                <div class="nav-parent">
+                    <a href="/apply" class="nav-parent child-is-selected">Apply</a>
+                    <div class="nav-children">
+                        <a href="/application-form" class="selected">Application Form</a>
+                    </div>
+                </div>
                 <a href="/hire">Hire</a>
                 <a href="/about">About</a>
                 <a href="/contact">Contact</a>
@@ -39,40 +44,142 @@
                 All information given here will be treated as confidential.
             </p>
 
-            <hr>
 
-            <div class="medium-width-block-narrow-margins application-form">
+            <form action="http://jamesgriff.co.uk/foo" method="POST" class="medium-width-block-narrow-margins application-form" id="application_form" onsubmit="submitApplicationForm(event);">
+
+                <input type="hidden" name="vacancy" value="18">
+                <input type="hidden" name="inf_howheard" value="Other">
+                <input type="hidden" name="inf_howhearddescription" value="n/a - Techsmiths">
+                <input type="hidden" name="inf_appliedBefore" value="No">
+                <input type="hidden" name="per_preferredStart" value="n/a - Techsmiths">
+
+                <hr>
+
                 <h3>Personal Details</h3>
 
                 <div class="two-cols">
-                    <input type="text" name="first_name" id="first_name" placeholder="First Name">
-                    <input type="text" name="surname" id="surname" placeholder="Surname">
-                    <input type="text" id="preferred_name" placeholder="How should we address you? (optional)">
-                    <input type="text" id="preferred_pronoun" placeholder="Preferred pronoun (optional)">
-                    <input type="email" name="email" id="email_address" placeholder="Email address">
-                    <input type="tel" name="phone" id="phone_number" placeholder="Phone number">
+                    <input type="text" name="per_forename" id="per_forename" placeholder="First Name *" class="application-form-field">
+                    <input type="text" name="per_surname" id="per_surname" placeholder="Surname *" class="application-form-field">
+                    <input type="text" id="preferred_name" placeholder="How should we address you? (optional)" class="application-form-field">
+                    <input type="text" id="preferred_pronoun" placeholder="Preferred pronoun (optional)" class="application-form-field">
+                    <input type="email" name="per_primaryEmail" id="per_primaryEmail" placeholder="Email address *" class="application-form-field">
+                    <input type="tel" name="per_primaryTelephone" id="per_primaryTelephone" placeholder="Phone number *" class="application-form-field">
                     
-                    <div class="half-width-label">Do you require a work permit?</div>
+                    <div class="half-width-label">Do you require a work permit? *</div>
                     <div class="half-width-options">
                         <label class="radio-button-label">
-                            <input type="radio" name="work_permit" value="yes">
+                            <input type="radio" name="add_workPermit" value="yes">
                             Yes
                         </label>
                         <label class="radio-button-label">
-                            <input type="radio" name="work_permit" value="no" checked>
+                            <input type="radio" name="add_workPermit" value="no" checked>
                             No
                         </label>
                     </div>
                 </div>
 
-            </div>
+
+                <hr>
+
+                <h3>CV and Covering Letter</h3>
+
+                <textarea id="per_coveringLetter" name="per_coveringLetter" rows="5" class="application-form-field"
+                          placeholder="Covering letter * -  please include links to any online portfolio work which might be relevant (e.g. github)"></textarea>
+
+                <div class="cv-upload">
+                    CV *
+                    <label for="cv_fileUpload" class="button button-yellow-on-black-on-black">Choose file +</label>
+                    <input type="file" id="cv_fileUpload" name="cv_fileUpload" onchange="cvFileUploadChanged();">
+                    <span id="cv_filename">No file chosen</span>
+                </div>
+
+                <textarea id="inf_additional" name="inf_additional" rows="5" class="application-form-field"
+                          placeholder="Any other information?"></textarea>
+
+
+                <hr>
+
+                <h3>Diversity Information</h3>
+
+                <p>We are committed to promoting diversity and equality at Softwire, and to help us with this we would be grateful if you could complete the following questions. Your answers allow us to track applicant diversity and to ensure equality in our interview tests. Your answers will not appear on your application and will not influence our decisions in any way.</p>
+
+                <p>Please complete this part of the form only if you consent to the use of this information for internal statistical purposes. This information will be kept for five years and will then be used to create anonymised recruitment statistics from which you cannot be identified.</p>
+
+                <div class="two-cols">
+                    <div class="half-width-label">What gender do you identify as?</div>
+                    <div class="half-width-options">
+                        <select class="application-form-field" id="per_sex" name="per_sex">
+                            <option value="" disabled selected>Please select...</option>
+                            <option value="Female">Female</option>
+                            <option value="Male">Male</option>
+                            <option value="Other">Other</option>
+                            <option value="Prefer not to say">Prefer not to say</option>
+                        </select>
+                    </div>
+
+                    <div class="half-width-label">What is your nationality?</div>
+                    <div class="half-width-options" id="add_nationality" name="add_nationality">
+                        <select class="application-form-field">
+                            <option value="" disabled selected>Please select...</option>
+                            <option value="British">British</option>
+                            <option value="Non British">Non British</option>
+                            <option value="Prefer not to say">Prefer not to say</option>
+                        </select>
+                    </div>
+
+                    <div class="half-width-label">What is your ethnicity?</div>
+                    <div class="half-width-options">
+                        <select class="application-form-field" id="per_ethnicity" name="per_ethnicity">
+                            <option value="" disabled selected>Please select...</option>
+                            <option value="White">White</option>
+                            <option value="Mixed / multiple ethnic groups">Mixed / multiple ethnic groups</option>
+                            <option value="Asian / Asian British">Asian / Asian British</option>
+                            <option value="Black / African / Caribbean / Black British">Black / African / Caribbean / Black British</option>
+                            <option value="Other">Other ethnic group</option>
+                            <option value="Prefer not to say">Prefer not to say</option>
+                        </select>
+                    </div>
+                </div>
+
+
+                <hr>
+
+                <h3>Declaration</h3>
+
+                <div class="declaration-box">
+                    <p>
+                        <b>I confirm that no information has been omitted which is relevant in evaluating me as a potential employee for Techsmiths and that all information supplied is accurate.</b>
+                        <br />
+                        Techsmiths consider information regarding serious misdemeanours to be relevant.
+                    </p>
+
+                    <p>This information will be processed as per the terms of our Privacy Policy.</p>
+
+                    <div class="button-row">
+                        <input type="submit" class="button button-black-on-yellow-on-black" id="submit-button" value="Submit">
+                    </div>
+
+                    <div class="error-message" id="application_form_validation_error">
+                        It looks like you didn't fill in all the required fields.
+                        <br />
+                        We've highlighted the missing fields in red.
+                    </div>
+                    <div class="error-message" id="application_form_sent">Thank you for applying to Techsmiths!</div>
+                    <div class="error-message" id="application_form_failed_to_send">
+                        There seems to be a problem with our application form at the moment.
+                        <br />
+                        Please try emailing us at <a href="mailto:info@techsmiths.uk">info@techsmiths.uk</a>
+                    </div>
+                </div>
+
+            </form>
         </div>
 
 
 
         <footer>
             <a class="social-link" href="https://twitter.com/TechsmithsUK">
-                <img src="images/twitter-logo.svg">
+                <img src="images/twitter-logo.svg" alt="Follow Techsmiths on Twitter">
             </a>
             <p class="copyright">
                 © 2019 Softwire Technology Limited. All rights reserved.

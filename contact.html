@@ -11,7 +11,7 @@
     <body>
         <header>
             <a href="/" class="logo-container">
-                <img src="images/logo.svg" class="logo" />
+                <img src="images/logo.svg" class="logo" alt="Techsmiths logo" />
             </a>
             
             <input type="checkbox" id="menu" class="menu-checkbox" />
@@ -22,7 +22,12 @@
             </label>
             <nav>
                 <a href="/">Home</a>
-                <a href="/apply">Apply</a>
+                <div class="nav-parent">
+                    <a href="/apply" class="nav-parent">Apply</a>
+                    <div class="nav-children">
+                        <a href="/application-form" >Application Form</a>
+                    </div>
+                </div>
                 <a href="/hire">Hire</a>
                 <a href="/about">About</a>
                 <a href="/contact" class="selected">Contact</a>
@@ -60,7 +65,7 @@
 
         <footer>
             <a class="social-link" href="https://twitter.com/TechsmithsUK">
-                <img src="images/twitter-logo.svg">
+                <img src="images/twitter-logo.svg" alt="Follow Techsmiths on Twitter">
             </a>
             <p class="copyright">
                 © 2019 Softwire Technology Limited. All rights reserved.

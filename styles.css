@@ -4,21 +4,21 @@
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 300;
-    src: local('Open Sans Light'), local('OpenSans-Light'), url(https://fonts.gstatic.com/s/opensans/v16/mem5YaGs126MiZpBA-UN_r8OUuhp.woff2) format('woff2');
+    src: local('Open Sans Light'), local('OpenSans-Light'), url('/fonts/OpenSans-Light.woff2') format('woff2');
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 @font-face {
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 400;
-    src: local('Open Sans Regular'), local('OpenSans-Regular'), url(https://fonts.gstatic.com/s/opensans/v16/mem8YaGs126MiZpBA-UFVZ0b.woff2) format('woff2');
+    src: local('Open Sans Regular'), local('OpenSans-Regular'), url('/fonts/OpenSans-Regular.woff2') format('woff2');
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 @font-face {
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 700;
-    src: local('Open Sans Bold'), local('OpenSans-Bold'), url(https://fonts.gstatic.com/s/opensans/v16/mem5YaGs126MiZpBA-UN7rgOUuhp.woff2) format('woff2');
+    src: local('Open Sans Bold'), local('OpenSans-Bold'), url('/fonts/OpenSans-Bold.woff2') format('woff2');
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
   
@@ -80,6 +80,7 @@ a:hover {
         height: 100%;
         object-fit: cover;
         object-position: left top;
+        color: #ffffff; /* For alt text */
     }
     @media (max-width: 210px) {
         .logo {
@@ -156,6 +157,12 @@ a:hover {
     nav a.selected, nav a:hover {
         border-left-color: #ffc100;
     }
+
+    .nav-children a {
+        font-size: 0.8em;
+        margin-left: 8px;
+        border-left-width: 5px;
+    }
 }
 
 
@@ -179,6 +186,7 @@ a:hover {
         height: 100%;
         object-fit: cover;
         object-position: left top;
+        color: #ffffff; /* For alt text */
     }
 
     .menu-checkbox {
@@ -210,8 +218,28 @@ a:hover {
         text-decoration: none; /* need this to override default 'a' behaviour */
     }
 
-    nav a.selected, nav a:hover {
+    nav a.selected, nav a.child-is-selected, nav a:hover {
         border-top-color: #ffc100;
+    }
+
+    .nav-parent {
+        position: relative;
+    }
+    .nav-children {
+        position: absolute;
+        top: 100%;
+        background-color: #181818;
+        width: max-content;
+        z-index: 1;
+        height: 0;
+        overflow: hidden;
+    }
+    .nav-parent:hover .nav-children {
+        height: 46px;
+    }
+    .nav-children a {
+        margin: 0px;
+        font-size: 0.8em;
     }
 }
 
@@ -273,6 +301,7 @@ a:hover {
     right: 0;
     bottom: 0;
     z-index: -1;
+    background-color: #181818;
 }
 
 .homepage-hero-box img {
@@ -424,7 +453,10 @@ a:hover {
 }
 
 .checkerboard-grid .text {
-    padding: 10px;
+    padding: 30px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 @media (max-width: 600px) {
     .checkerboard-grid .text {
@@ -462,6 +494,7 @@ a:hover {
 @media (min-width: 601px) {
     .checkerboard-grid .text h2 {
         font-size: 2rem;
+        margin-top: 0;
     }
 }
 
@@ -471,6 +504,9 @@ a:hover {
 
 .checkerboard-grid .text p {
     line-height: 1.5;
+}
+.checkerboard-grid .text p:last-child {
+    margin-bottom: 0;
 }
 
 
@@ -509,9 +545,8 @@ a:hover {
     }
 }
 
-a.button {
+.button {
     display: inline-block;
-    text-decoration: none;
 
     transition-property: color, background-color, filter;
     transition-duration: 0.5s;
@@ -520,22 +555,25 @@ a.button {
     border-width: 3px;
     border-style: solid;
 }
+a.button {
+    text-decoration: none;
+}
 @media (max-width: 480px) {
-    a.button {
+    .button {
         margin: 8px;
         padding: 8px 16px;
         font-size: 16px;
     }
 }
 @media (min-width: 481px) and (max-width: 600px) {
-    a.button {
+    .button {
         margin: 1.666vw;
         padding: 1.666vw 3.333vw;
         font-size: 3.333vw;
     }
 }
 @media (min-width: 601px) {
-    a.button {
+    .button {
         margin: 10px;
         padding: 10px 20px;
         font-size: 20px;
@@ -558,7 +596,8 @@ a.button {
     border-color: #ffc100;
 }
 .button-black-on-yellow-on-black:hover {
-    filter: brightness(70%);
+    color: #ffc100;
+    background-color: #181818;
 }
 
 .button-yellow-on-black-on-black {
@@ -708,6 +747,7 @@ a.button {
     .picture-name-quote picture {
         display: block;
         width: 150px;
+        height: 150px;
     }
 
     .picture-name-quote .name {
@@ -754,6 +794,7 @@ a.button {
 .picture-name-quote picture img {
     display: block;
     width: 100%;
+    height: 100%;
     max-width: 150px;
     border-radius: 50%;
 }
@@ -821,6 +862,7 @@ footer {
 }
 .social-link img {
     width: 40px;
+    color: #ffffff;  /* For alt text */
 }
 
 .copyright {
@@ -926,7 +968,6 @@ footer {
     width: 100%;
     max-width: 1000px;
     margin: auto;
-    /* padding: 0 10px; */
 
     display: flex;
     flex-direction: row;
@@ -962,13 +1003,7 @@ footer {
 
 hr {
     border: 0.5px solid #ffc100;
-    max-width: 780px;
     margin: 30px auto;
-}
-@media (max-width: 800px) {
-    hr {
-        margin: 30px 10px;
-    }
 }
 
 p.margin-between {
@@ -981,8 +1016,7 @@ h3 {
 }
 
 
-
-.application-form input[type=text], .application-form input[type=email], .application-form input[type=tel], .application-form textarea {
+.application-form .application-form-field {
     display: block;
     resize: none;
     margin: 10px 0;
@@ -990,8 +1024,8 @@ h3 {
 
     color: #ffffff;
     background: none;
-    border: none;
-    border-bottom: 1px solid #ffc100;
+    border: 0px solid #ffc100;
+    border-bottom-width: 1px;
 
     font-size: 15px;
     outline: none;
@@ -1038,11 +1072,12 @@ h3 {
 .application-form .radio-button-label {
     margin-right: 30px;
     display: inline-flex;
+    cursor: pointer;
 }
 
 .application-form input[type=radio] {
     position: relative;
-    width: 0;
+    width: 0.1px;
     margin-right: 30px;
 }
 
@@ -1053,6 +1088,7 @@ h3 {
     height: 18px;
     background-color: #ffc100;
     border-radius: 50%;
+    cursor: pointer;
 }
 .application-form input[type=radio]:hover::before {
     filter: brightness(70%);
@@ -1067,5 +1103,97 @@ h3 {
     left: 5px;
     background-color: #181818;
     border-radius: 50%;
+    cursor: pointer;
 }
 
+
+.application-form textarea.application-form-field {
+    width: 100%;
+    border-width: 1px;
+}
+
+.cv-upload {
+    margin: 20px 0;
+}
+.cv-upload label {
+    cursor: pointer;
+}
+
+.application-form input[type=file] {
+    width: 0.1px;
+    position: absolute;
+    opacity: 0;
+}
+
+.application-form select {
+    width: 100%;
+}
+
+.application-form select.application-form-field {
+    background-color: #181818;
+}
+
+.application-form select option[disabled] {
+    display: none;
+}
+
+.declaration-box {
+    border: 2px solid #ffc100;
+    padding: 0 1em 10px 1em;
+}
+
+
+#submit-button {
+    position: relative;
+    width: 140px;
+    cursor: pointer;
+}
+#submit-button.sending, #submit-button.success, #submit-button.error {
+    color: transparent;
+}
+#submit-button::after {
+    content: '';
+    position: absolute;
+    width: calc(1em);
+    height: calc(1em);
+    left: calc(50% - 0.5em);
+    top: calc(50% - 0.5em);
+    line-height: 1em;
+}
+#submit-button.sending::after {
+    border: 2px solid #181818;
+    border-right: none;
+    border-bottom: none;
+    border-radius: 50%;
+    animation-name: spin;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+#submit-button.sending:hover::after {
+    border-color: #ffffff;
+}
+#submit-button.success::after {
+    content: '✔️';
+    color: #ffffff;
+}
+#submit-button.error::after {
+    content: '❌';
+    color: #ffffff;
+}
+
+.application-form .error-message {
+    font-size: 0.75rem;
+    text-align: center;
+    display: none;
+}
+.application-form .error-message.error-message-visible {
+    display: block;
+}
+
+.application-form .application-form-field-error {
+    border: 1px solid #dd4400 !important;
+}
+.application-form input[type=radio].application-form-field-error::before {
+    background-color: #dd4400;
+}

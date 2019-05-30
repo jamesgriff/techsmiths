@@ -11,7 +11,7 @@
     <body>
         <header>
             <a href="/" class="logo-container">
-                <img src="images/logo.svg" class="logo" />
+                <img src="images/logo.svg" class="logo" alt="Techsmiths logo" />
             </a>
             
             <input type="checkbox" id="menu" class="menu-checkbox" />
@@ -22,7 +22,12 @@
             </label>
             <nav>
                 <a href="/">Home</a>
-                <a href="/apply">Apply</a>
+                <div class="nav-parent">
+                    <a href="/apply" class="nav-parent">Apply</a>
+                    <div class="nav-children">
+                        <a href="/application-form" >Application Form</a>
+                    </div>
+                </div>
                 <a href="/hire" class="selected">Hire</a>
                 <a href="/about">About</a>
                 <a href="/contact">Contact</a>
@@ -37,7 +42,7 @@
                 <source media="(orientation: portrait) and (min-width: 641px)" srcset="images/hire-hero-1280-1280.jpg" />
                 <source media="(orientation: portrait) and (min-width: 351px)" srcset="images/hire-hero-640-640.jpg" />
                 <source media="(orientation: portrait)" srcset="images/hire-hero-350-350.jpg" />
-                <img src="images/hire-hero-1920-1280.jpg" style="object-position: 70% 90%;" />
+                <img src="images/hire-hero-1920-1280.jpg" style="object-position: 70% 65%;" alt="" /><!-- alt="" because this image is just for decoration -->
             </picture>
             <div class="tagline-phrase">
                 <span class="tagline">Hire a Techsmith</span>
@@ -65,7 +70,7 @@
                 <div class="row">
                     <picture>
                         <source media="(min-width: 601px)" srcset="images/lowri-emily-josh-square-600.jpg" />
-                        <img src="images/lowri-emily-josh-letterbox-560-187.jpg" style="object-position: 63% center;" />
+                        <img src="images/lowri-emily-josh-letterbox-560-187.jpg" style="object-position: 63% center;" alt="" /><!-- alt="" because this image is just for decoration -->
                     </picture>
                     <div class="text black-text yellow-background">
                         <h2>Versatility</h2>
@@ -76,7 +81,7 @@
                 <div class="row">
                     <picture>
                         <source media="(min-width: 601px)" srcset="images/michael-square-600.jpg" />
-                        <img src="images/michael-letterbox-560-187.jpg" />
+                        <img src="images/michael-letterbox-560-187.jpg" alt="" /><!-- alt="" because this image is just for decoration -->
                     </picture>
                     <div class="text black-text yellow-background">
                         <h2>Soft Skills</h2>
@@ -87,7 +92,7 @@
                 <div class="row">
                     <picture>
                         <source media="(min-width: 601px)" srcset="images/rita-jenny-square-600.jpg" />
-                        <img src="images/rita-jenny-letterbox-560-187.jpg" style="object-position: 20% center;" />
+                        <img src="images/rita-jenny-letterbox-560-187.jpg" style="object-position: 20% center;" alt="" /><!-- alt="" because this image is just for decoration -->
                     </picture>
                     <div class="text black-text yellow-background">
                         <h2>Genuine Understanding</h2>
@@ -102,7 +107,7 @@
 
             <div class="picture-name-quote">
                 <picture>
-                    <img src="images/jess-square-150.jpg">
+                    <img src="images/jess-square-150.jpg" alt="Photo of Jess">
                 </picture>
                 <div class="name">Jess</div>
                 <p class="quote">
@@ -112,7 +117,7 @@
 
             <div class="picture-name-quote">
                 <picture>
-                    <img src="images/tom-square-150.jpg">
+                    <img src="images/tom-square-150.jpg" alt="Photo of Tom">
                 </picture>
                 <div class="name">Tom</div>
                 <p class="quote">
@@ -122,7 +127,7 @@
 
             <div class="picture-name-quote">
                 <picture>
-                    <img src="images/ben-square-150.jpg">
+                    <img src="images/ben-square-150.jpg" alt="Photo of Ben">
                 </picture>
                 <div class="name">Ben</div>
                 <p class="quote">
@@ -136,22 +141,22 @@
 
             <div class="logos">
                 <picture>
-                    <img src="images/logo-nspcc.png">
+                    <img src="images/logo-nspcc.png" alt="NSPCC logo">
                 </picture>
                 <picture>
-                    <img src="images/logo-altran.png">
+                    <img src="images/logo-altran.png" alt="Altran logo">
                 </picture>
                 <picture>
-                    <img src="images/logo-squareenix.png">
+                    <img src="images/logo-squareenix.png" alt="Square Enix logo">
                 </picture>
                 <picture>
-                    <img src="images/logo-anthonynolan.png">
+                    <img src="images/logo-anthonynolan.png" alt="Anthony Nolan logo">
                 </picture>
                 <picture>
-                    <img src="images/logo-softwire.png">
+                    <img src="images/logo-softwire.png" alt="Softwire logo">
                 </picture>
                 <picture>
-                    <img src="images/logo-icaew.png">
+                    <img src="images/logo-icaew.png" alt="Institute of Chartered Accountants in England and Wales logo">
                 </picture>
             </div>
         </div>
@@ -160,7 +165,7 @@
             <div class="row">
                 <picture>
                     <source media="(min-width: 601px)" srcset="images/james-square-600.jpg" />
-                    <img src="images/james-letterbox-560-187.jpg" />
+                    <img src="images/james-letterbox-560-187.jpg" alt="" /><!-- alt="" because this image is just for decoration -->
                 </picture>
                 <div class="text white-text black-background">
                     <h2>Get in touch</h2>
@@ -181,7 +186,7 @@
 
         <footer>
             <a class="social-link" href="https://twitter.com/TechsmithsUK">
-                <img src="images/twitter-logo.svg">
+                <img src="images/twitter-logo.svg" alt="Follow Techsmiths on Twitter">
             </a>
             <p class="copyright">
                 © 2019 Softwire Technology Limited. All rights reserved.
