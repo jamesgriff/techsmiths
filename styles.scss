@@ -1,0 +1,41 @@
+---
+---
+
+@charset "utf-8";
+
+@import 'fonts';
+@import 'general';  
+
+@import 'header';
+@import 'footer';
+
+@import 'hero-box';
+@import 'sections-and-colours';
+@import 'checkerboard-grid';
+@import 'buttons';
+@import 'medium-width-text-and-block';
+@import 'picture-name-quote';
+@import 'logos';
+@import 'our-team';
+@import 'contact-us-form';
+
+@import 'application-form';
+@import 'homepage';
+
+
+
+/* TODO: NEED TO DECIDE WHERE TO PUT ALL THIS */
+hr {
+    border: 0.5px solid #ffc100;
+    margin: 30px auto;
+}
+
+/* TODO: This is breaking things (e.g. the "Contact Us" bit on each page has too much spacing now */
+p.margin-between {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+h3 {
+    font-size: 1.7rem;
+}

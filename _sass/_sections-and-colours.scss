@@ -1,0 +1,35 @@
+
+@media (max-width: 1000px) {
+    .section {
+        padding: 5vw 0;
+    }
+}
+@media (min-width: 1001px) {
+    .section {
+        padding: 50px 0;
+    }
+}
+
+.section > h2 {
+    text-align: center;
+    font-size: 2rem;
+    padding: 0 20px;
+}
+
+
+
+.black-text {
+    color: #181818;
+}
+.white-text {
+    color: #ffffff;
+}
+.yellow-background {
+    background-color: #ffc100;
+}
+.black-background {
+    background-color: #181818;
+}
+.white-background {
+    background-color: #ffffff;
+}

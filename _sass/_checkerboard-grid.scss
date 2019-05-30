@@ -1,0 +1,127 @@
+
+.checkerboard-grid .row {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+@media (max-width: 360px) {
+    .checkerboard-grid .row {
+        width: 100%;
+    }
+}
+@media (min-width: 361px) and (max-width: 600px) {
+    .checkerboard-grid .row {
+        width: calc(100% - 40px);
+    }
+}
+@media (min-width: 601px) {
+    .checkerboard-grid .row {
+        width: calc(100% - 40px);
+        max-width: 960px;
+
+        display: flex;
+        justify-content: space-between;
+    }
+}
+.checkerboard-grid.grid-no-gap .row {
+    background-color: #181818;
+}
+
+.checkerboard-grid picture {
+    display: block;
+}
+@media (max-width: 600px) {
+    .checkerboard-grid picture {
+        width: 100%;
+    }
+}
+@media (min-width: 601px) {
+    .checkerboard-grid.grid-with-gap picture {
+        width: calc(50% - 10px);
+    }
+    .checkerboard-grid.grid-no-gap picture {
+        width: 50%;
+    }
+}
+
+.checkerboard-grid img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+}
+
+.checkerboard-grid .text {
+    padding: 30px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+@media (max-width: 600px) {
+    .checkerboard-grid .text {
+        position: relative;
+    }
+    .checkerboard-grid .text h2 {
+        color: #ffffff;
+    }
+}
+@media (min-width: 601px) {
+    .checkerboard-grid.grid-with-gap .text {
+        width: calc(50% - 10px);
+    }
+    .checkerboard-grid.grid-no-gap .text {
+        width: 50%;
+    }
+}
+@media (min-width: 801px) {
+    .checkerboard-grid .text {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .checkerboard-grid .text h2 {
+        margin: 0;
+        position: absolute;
+        left: 0;
+        bottom: 100%;
+        padding: 10px;
+
+        font-size: 8vw;
+    }
+}
+@media (min-width: 601px) {
+    .checkerboard-grid .text h2 {
+        font-size: 2rem;
+        margin-top: 0;
+    }
+}
+
+.checkerboard-grid .text h3 {
+    font-size: 1.5rem;
+}
+
+.checkerboard-grid .text p {
+    line-height: 1.5;
+}
+.checkerboard-grid .text p:last-child {
+    margin-bottom: 0;
+}
+
+
+@media (min-width: 601px) {
+    .checkerboard-grid.grid-picture-first .row:nth-of-type(odd) {
+        flex-direction: row;
+    }
+    .checkerboard-grid.grid-picture-first .row:nth-of-type(even) {
+        flex-direction: row-reverse;
+    }
+    .checkerboard-grid.grid-text-first .row:nth-of-type(odd) {
+        flex-direction: row-reverse;
+    }
+    .checkerboard-grid.grid-text-first .row:nth-of-type(even) {
+        flex-direction: row;
+    }
+}

@@ -1,0 +1,121 @@
+
+@charset "utf-8";
+
+@media (max-width: 600px) {
+    .picture-name-quote {
+        padding: 10px 20px;
+
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-end;
+    }
+
+    .picture-name-quote picture {
+        display: block;
+        width: 50%;
+    }
+
+    .picture-name-quote .name {
+        width: 50%;
+        font-size: 1.5rem;
+        font-weight: bold;
+        padding-left: 10px;
+        padding-bottom: 10px;
+    }
+
+    .picture-name-quote p.quote {
+        width: 100%;
+        margin: 0;
+        line-height: 1.5;
+    }
+}
+@media (min-width: 601px) {
+    .picture-name-quote {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 0 20px;
+        min-height: 170px;
+    }
+
+    .picture-name-quote picture {
+        display: block;
+        width: 150px;
+        height: 150px;
+    }
+
+    .picture-name-quote .name {
+        margin-top: -150px;
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+    .picture-name-quote:nth-of-type(odd) .name {
+        margin-left: 170px;
+    }
+    .picture-name-quote:nth-of-type(even) .name {
+        margin-right: 170px;
+    }
+
+    .picture-name-quote p.quote {
+        margin: 0;
+        line-height: 1.5;
+    }
+    .picture-name-quote:nth-of-type(odd) p.quote {
+        margin-left: 170px;
+    }
+    .picture-name-quote:nth-of-type(even) p.quote {
+        margin-right: 170px;
+    }
+}
+
+.picture-name-quote:nth-of-type(even) {
+    direction: rtl;
+}
+.picture-name-quote:nth-of-type(even) picture {
+    direction: ltr;
+    text-align: right;
+}
+.picture-name-quote:nth-of-type(even) .name {
+    direction: ltr;
+    text-align: right;
+}
+.picture-name-quote:nth-of-type(even) p.quote {
+    direction: ltr;
+    text-align: right;
+}
+
+
+.picture-name-quote picture img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-width: 150px;
+    border-radius: 50%;
+}
+.picture-name-quote:nth-of-type(odd) picture img {
+    margin-left: auto;
+}
+.picture-name-quote:nth-of-type(even) picture img {
+    margin-right: auto;
+}
+
+.picture-name-quote p.quote::before {
+    content: '\201C';
+    font-size: 2rem;
+    font-weight: bold;
+    vertical-align: bottom;
+    padding-right: 5px;
+}
+.picture-name-quote p.quote::after {
+    content: '\201D';
+    font-size: 2rem;
+    font-weight: bold;
+    vertical-align: top;
+    padding-left: 10px;
+}
+@media (min-width: 601px) {
+    .picture-name-quote:nth-of-type(odd) p.quote::after {
+        position: absolute;
+    }
+}

@@ -1,0 +1,62 @@
+
+#homepage-apply-now-container {
+    position: relative;
+}
+#homepage-apply-now-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #181818;
+    z-index: -3;
+}
+@media (max-width: 480px) {
+    #homepage-apply-now-container {
+        margin-top: -32px;
+    }
+}
+@media (min-width: 481px) and (max-width: 600px) {
+    #homepage-apply-now-container {
+        margin-top: -6vw;
+    }
+}
+@media (min-width: 601px) {
+    #homepage-apply-now-container {
+        margin-top: -36px;
+    }
+}
+
+
+
+/* TWO COLUMNS - for Homepage FAQs */
+.two-columns {
+    max-width: 1000px;
+    margin: auto;
+    padding: 0 20px;
+    column-gap: 20px;
+}
+@media (max-width: 600px) {
+    .two-columns {
+        column-count: 1;
+    }
+}
+@media (min-width: 601px) {
+    .two-columns {
+        column-count: 2;
+    }
+}
+
+.two-columns div {
+    break-inside: avoid;
+    padding: 1px;
+}
+
+.two-columns div h3 {
+    font-size: 1.5rem
+}
+
+.two-columns div p {
+    font-size: 1rem
+}

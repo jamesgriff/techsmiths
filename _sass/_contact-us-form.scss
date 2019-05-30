@@ -1,0 +1,91 @@
+
+@keyframes spin {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+.contact-us-form {
+    margin: 20px 0;
+}
+
+.contact-us-form input, .contact-us-form textarea {
+    display: block;
+    width: 100%;
+    resize: none;
+    margin: 10px 0;
+    padding: 5px;
+
+    color: #ffffff;
+    background: none;
+    border: none;
+    border-bottom: 1px solid #ffffff;
+}
+.contact-us-form input::placeholder, .contact-us-form textarea::placeholder {
+    color: #ffffff;
+}
+
+.contact-us-form button {
+    display: block;
+    width: 100px;
+    margin: auto;
+    padding: 10px;
+    position: relative;
+
+    color: #ffffff;
+    background: none;
+    border: 1px solid #ffffff;
+}
+.contact-us-form.sending button, .contact-us-form.success button, .contact-us-form.error button {
+    color: transparent;
+}
+.contact-us-form button::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: calc(50% - 10px);
+    top: calc(50% - 11px);
+}
+.contact-us-form.sending button::after {
+    border: 2px solid #ffffff;
+    border-right: none;
+    border-bottom: none;
+    border-radius: 50%;
+    animation-name: spin;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+.contact-us-form.success button::after {
+    content: '✔️';
+    color: #ffffff;
+}
+.contact-us-form.error button::after {
+    content: '❌';
+    color: #ffffff;
+}
+
+.contact-us-form .error-message {
+    font-size: 0.75rem;
+    text-align: center;
+    visibility: hidden;
+}
+.contact-us-form.error .error-message {
+    visibility: visible;
+}
+
+
+.map {
+    width: 100%;
+    height: 450px;
+    max-height: 100vw;
+
+    border: 0;
+    filter: grayscale(1);
+}

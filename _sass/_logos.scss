@@ -1,0 +1,17 @@
+
+.logos {
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.logos picture {
+    margin: 20px;
+}
+
+.logos picture img {
+    width: 100%;
+}
