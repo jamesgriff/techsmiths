@@ -14,7 +14,7 @@ function submitContactUsForm() {
     };
 
     setContactUsFormStatus('sending');
-    post('https://rd36a554m2.execute-api.eu-west-1.amazonaws.com/default/techsmiths-contact-form',
+    post('https://ran8cs5ftc.execute-api.eu-west-2.amazonaws.com/default/techsmiths-contact-form',
         body,
         () => { // success
             setContactUsFormStatus('success');
