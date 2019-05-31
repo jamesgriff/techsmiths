@@ -1,7 +1,7 @@
 
 
 function cvFileUploadChanged() {
-    let cv = document.getElementById('cv');
+    let cv = document.getElementById('cv_fileUpload');
     let cv_filename = document.getElementById('cv_filename');
 
     if (cv && cv.files && cv.files[0] && cv.files[0].name) {
@@ -29,7 +29,7 @@ function submitApplicationForm(event) {
 
     isFormValid &= isRadioFieldValid('add_workPermit');
     
-    isFormValid &= isFileUploadFieldValid('cv_fileUpload');
+    isFormValid &= isFileUploadFieldValid('cv_fileUpload', 'cv_fileUpload_label');
 
 
     if (!isFormValid) {
@@ -38,10 +38,14 @@ function submitApplicationForm(event) {
         return;
     }
 
-    var formData = new FormData(document.getElementById('application_form'));
-    var xhr = new XMLHttpRequest();
+    setSubmitButtonStatus('sending');
+
+    let applicationForm = document.getElementById('application_form');
+    let formData = new FormData(applicationForm);
+    let xhr = new XMLHttpRequest();
     xhr.addEventListener('loadend', xhrLoadEnd);
-    xhr.open('POST', 'http://stage.zoo.lan/ima/self-service/apply/submit', true);
+    xhr.open(applicationForm.method, applicationForm.action, true);
+    xhr.setRequestHeader('Accept', 'application/json');
     xhr.send(formData);
 
 
@@ -96,9 +100,18 @@ function submitApplicationForm(event) {
         return undefined;
     }
 
-    function isFileUploadFieldValid(fieldName) {
+    function isFileUploadFieldValid(fieldName, labelName) {
+        let fileUploadLabel = document.getElementById(labelName);
+        fileUploadLabel.classList.remove('application-form-field-error');
+
         let fileUpload = document.getElementById(fieldName);
-        return fileUpload.files && fileUpload.files.length > 0;
+        let atLeastOneFileSelected = fileUpload.files && fileUpload.files.length > 0;
+
+        if (!atLeastOneFileSelected) {
+            fileUploadLabel.classList.add('application-form-field-error');
+        }
+
+        return atLeastOneFileSelected;
     }
 
 

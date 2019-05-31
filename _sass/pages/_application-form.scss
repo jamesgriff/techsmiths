@@ -160,11 +160,11 @@
     }
     #submit-button.success::after {
         content: '\2714';  // Unicode Tick: ✔️
-        color: #ffffff;
+        color: #181818;
     }
     #submit-button.error::after {
         content: '\274C';  // Unicode Cross: ❌
-        color: #ffffff;
+        color: #181818;
     }
 
     .error-message {
@@ -178,6 +178,9 @@
 
     .application-form-field-error {
         border: 1px solid #dd4400 !important;
+    }
+    .button.application-form-field-error {
+        border-width: 3px !important;
     }
     input[type=radio].application-form-field-error::before {
         background-color: #dd4400;

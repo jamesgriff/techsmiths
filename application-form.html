@@ -25,7 +25,7 @@
             </p>
 
 
-            <form action="http://jamesgriff.co.uk/foo" method="POST" class="medium-width-block-narrow-margins application-form" id="application_form" onsubmit="submitApplicationForm(event);">
+            <form action="http://stage.zoo.lan/ima/self-service/apply/submit" method="POST" class="medium-width-block-narrow-margins application-form" id="application_form" onsubmit="submitApplicationForm(event);">
 
                 <input type="hidden" name="vacancy" value="18">
                 <input type="hidden" name="inf_howheard" value="Other">
@@ -40,19 +40,19 @@
                 <div class="two-cols">
                     <input type="text" name="per_forename" id="per_forename" placeholder="First Name *" class="application-form-field">
                     <input type="text" name="per_surname" id="per_surname" placeholder="Surname *" class="application-form-field">
-                    <input type="text" id="preferred_name" placeholder="How should we address you? (optional)" class="application-form-field">
-                    <input type="text" id="preferred_pronoun" placeholder="Preferred pronoun (optional)" class="application-form-field">
+                    <input type="text" name="preferred_name" id="preferred_name" placeholder="How should we address you? (optional)" class="application-form-field">
+                    <input type="text" name="preferred_pronoun" id="preferred_pronoun" placeholder="Preferred pronoun (optional)" class="application-form-field">
                     <input type="email" name="per_primaryEmail" id="per_primaryEmail" placeholder="Email address *" class="application-form-field">
                     <input type="tel" name="per_primaryTelephone" id="per_primaryTelephone" placeholder="Phone number *" class="application-form-field">
                     
                     <div class="half-width-label">Do you require a work permit? *</div>
                     <div class="half-width-options">
                         <label class="radio-button-label">
-                            <input type="radio" name="add_workPermit" value="yes">
+                            <input type="radio" name="add_workPermit" value="Yes">
                             Yes
                         </label>
                         <label class="radio-button-label">
-                            <input type="radio" name="add_workPermit" value="no" checked>
+                            <input type="radio" name="add_workPermit" value="No" checked>
                             No
                         </label>
                     </div>
@@ -68,7 +68,7 @@
 
                 <div class="cv-upload">
                     CV *
-                    <label for="cv_fileUpload" class="button button-yellow-on-black-on-black">Choose file +</label>
+                    <label for="cv_fileUpload" id="cv_fileUpload_label" class="button button-yellow-on-black-on-black">Choose file +</label>
                     <input type="file" id="cv_fileUpload" name="cv_fileUpload" onchange="cvFileUploadChanged();">
                     <span id="cv_filename">No file chosen</span>
                 </div>
@@ -98,8 +98,8 @@
                     </div>
 
                     <div class="half-width-label">What is your nationality?</div>
-                    <div class="half-width-options" id="add_nationality" name="add_nationality">
-                        <select class="application-form-field">
+                    <div class="half-width-options">
+                        <select class="application-form-field" id="add_nationality" name="add_nationality">
                             <option value="" disabled selected>Please select...</option>
                             <option value="British">British</option>
                             <option value="Non British">Non British</option>
@@ -136,7 +136,12 @@
                     <p>This information will be processed as per the terms of our Privacy Policy.</p>
 
                     <div class="button-row">
-                        <input type="submit" class="button button-black-on-yellow-on-black" id="submit-button" value="Submit">
+                        <button class="button button-black-on-yellow-on-black" id="submit-button">
+                            <!-- Q: Why is this a button, not an input[type=button]?
+                                 A: So the ::after (spinner, tick, cross) can work
+                                    Apparently you can't use an ::after on input[type=button] (shrug) -->
+                            Submit
+                        </button>
                     </div>
 
                     <div class="error-message" id="application_form_validation_error">
