@@ -1,0 +1,34 @@
+
+.our-team {
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    
+    .person {
+        width: 180px;
+        margin: 10px 20px;
+        text-align: center;
+    }
+
+    .person picture {
+        display: block;
+        width: 100%;
+    }
+
+    .person picture img {
+        display: block;
+        width: 100%;
+        border-radius: 50%;
+    }
+
+    .person h3, .person p {
+        margin: 10px 0;
+    }
+
+}

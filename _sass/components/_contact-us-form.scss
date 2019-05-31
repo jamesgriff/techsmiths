@@ -1,0 +1,71 @@
+
+.contact-us-form {
+    margin: 20px 0;
+    
+    input, textarea {
+        display: block;
+        width: 100%;
+        resize: none;
+        margin: 10px 0;
+        padding: 5px;
+    
+        color: #ffffff;
+        background: none;
+        border: none;
+        border-bottom: 1px solid #ffffff;
+    }
+    input::placeholder, textarea::placeholder {
+        color: #ffffff;
+    }
+    
+    button {
+        display: block;
+        width: 100px;
+        margin: auto;
+        padding: 10px;
+        position: relative;
+    
+        color: #ffffff;
+        background: none;
+        border: 1px solid #ffffff;
+    }
+    &.sending button, &.success button, &.error button {
+        color: transparent;
+    }
+    button::after {
+        content: '';
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        left: calc(50% - 10px);
+        top: calc(50% - 11px);
+    }
+    &.sending button::after {
+        border: 2px solid #ffffff;
+        border-right: none;
+        border-bottom: none;
+        border-radius: 50%;
+        animation-name: spin;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+    }
+    &.success button::after {
+        content: '\2714';  // Unicode Tick: ✔️
+        color: #ffffff;
+    }
+    &.error button::after {
+        content: '\274C';  // Unicode Cross: ❌
+        color: #ffffff;
+    }
+    
+    .error-message {
+        font-size: 0.75rem;
+        text-align: center;
+        visibility: hidden;
+    }
+    &.error .error-message {
+        visibility: visible;
+    }
+
+}

@@ -1,0 +1,186 @@
+
+.application-form {
+
+    .application-form-field {
+        display: block;
+        resize: none;
+        margin: 10px 0;
+        padding: 5px;
+
+        color: #ffffff;
+        background: none;
+        border: 0px solid #ffc100;
+        border-bottom-width: 1px;
+
+        font-size: 15px;
+        outline: none;
+    }
+    input::placeholder, textarea::placeholder {
+        color: #ffffff;
+    }
+
+    .two-cols {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    @media (max-width: 650px) {
+        .two-cols>* {
+            width: 100%;
+        }
+    }
+    @media (min-width: 651px) {
+        .two-cols>* {
+            width: calc(50% - 20px);
+        }
+    }
+
+    .half-width-label {
+        margin: 10px 0;
+        padding: 5px;
+        font-size: 15px;
+    }
+    @media (max-width: 650px) {
+        .half-width-label {
+            margin: 20px 0 5px 0;
+        }
+    }
+
+    .half-width-options {
+        padding: 5px;
+    }
+
+
+    .radio-button-label {
+        margin-right: 30px;
+        display: inline-flex;
+        cursor: pointer;
+    }
+
+    input[type=radio] {
+        position: relative;
+        width: 0.1px;
+        margin-right: 30px;
+    }
+
+    input[type=radio]::before {
+        content: '';
+        position: absolute;
+        width: 18px;
+        height: 18px;
+        background-color: #ffc100;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+    input[type=radio]:hover::before {
+        filter: brightness(70%);
+    }
+
+    input[type=radio]:checked::after {
+        content: '';
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        top: 5px;
+        left: 5px;
+        background-color: #181818;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+
+    textarea.application-form-field {
+        width: 100%;
+        border-width: 1px;
+    }
+
+    .cv-upload {
+        margin: 20px 0;
+    }
+    .cv-upload label {
+        cursor: pointer;
+    }
+
+    input[type=file] {
+        width: 0.1px;
+        position: absolute;
+        opacity: 0;
+    }
+
+    select {
+        width: 100%;
+    }
+
+    select.application-form-field {
+        background-color: #181818;
+    }
+
+    select option[disabled] {
+        display: none;
+    }
+
+    .declaration-box {
+        border: 2px solid #ffc100;
+        padding: 0 1em 10px 1em;
+    }
+
+
+    #submit-button {
+        position: relative;
+        width: 140px;
+        cursor: pointer;
+    }
+    #submit-button.sending, #submit-button.success, #submit-button.error {
+        color: transparent;
+    }
+    #submit-button::after {
+        content: '';
+        position: absolute;
+        width: calc(1em);
+        height: calc(1em);
+        left: calc(50% - 0.5em);
+        top: calc(50% - 0.5em);
+        line-height: 1em;
+    }
+    #submit-button.sending::after {
+        border: 2px solid #181818;
+        border-right: none;
+        border-bottom: none;
+        border-radius: 50%;
+        animation-name: spin;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+    }
+    #submit-button.sending:hover::after {
+        border-color: #ffffff;
+    }
+    #submit-button.success::after {
+        content: '\2714';  // Unicode Tick: ✔️
+        color: #ffffff;
+    }
+    #submit-button.error::after {
+        content: '\274C';  // Unicode Cross: ❌
+        color: #ffffff;
+    }
+
+    .error-message {
+        font-size: 0.75rem;
+        text-align: center;
+        display: none;
+    }
+    .error-message.error-message-visible {
+        display: block;
+    }
+
+    .application-form-field-error {
+        border: 1px solid #dd4400 !important;
+    }
+    input[type=radio].application-form-field-error::before {
+        background-color: #dd4400;
+    }
+
+}

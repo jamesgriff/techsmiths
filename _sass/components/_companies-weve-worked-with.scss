@@ -1,17 +1,17 @@
 
-.logos {
+.companies-weve-worked-with {
     max-width: 1000px;
     margin: auto;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-}
 
-.logos picture {
-    margin: 20px;
-}
-
-.logos picture img {
-    width: 100%;
+    picture {
+        margin: 20px;
+    }
+    
+    img {
+        width: 100%;
+    }
 }

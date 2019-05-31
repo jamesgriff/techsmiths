@@ -1,26 +1,24 @@
 ---
 ---
 
-@charset "utf-8";
+@import 'general/fonts';
+@import 'general/reset-and-basic';  
 
-@import 'fonts';
-@import 'general';  
+@import 'components/header';
+@import 'components/footer';
+@import 'components/hero-box';
+@import 'components/checkerboard-grid';
+@import 'components/picture-name-quote';
+@import 'components/our-team';
+@import 'components/contact-us-form';
+@import 'components/two-columns';
+@import 'components/companies-weve-worked-with';
 
-@import 'header';
-@import 'footer';
-
-@import 'hero-box';
 @import 'sections-and-colours';
-@import 'checkerboard-grid';
 @import 'buttons';
 @import 'medium-width-text-and-block';
-@import 'picture-name-quote';
-@import 'logos';
-@import 'our-team';
-@import 'contact-us-form';
 
-@import 'application-form';
-@import 'homepage';
+@import 'pages/application-form';
 
 
 
@@ -39,3 +37,22 @@ p.margin-between {
 h3 {
     font-size: 1.7rem;
 }
+
+.map {
+    width: 100%;
+    height: 450px;
+    max-height: 100vw;
+
+    border: 0;
+    filter: grayscale(1);
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+

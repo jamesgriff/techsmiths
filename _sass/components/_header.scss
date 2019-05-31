@@ -1,0 +1,186 @@
+
+header {
+
+    /* NAV BAR */
+    /* (mobile) */
+    @media (max-width: 650px), (max-height: 500px) {
+        background-color: #181818;
+        height: 70px;
+        padding: 10px;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        .logo {
+            height: 100%;
+            object-fit: cover;
+            object-position: left top;
+            color: #ffffff; /* For alt text */
+        }
+        @media (max-width: 210px) {
+            .logo {
+                width: 45px;
+            }
+        }
+
+
+        .menu-checkbox {
+            display: none;
+        }
+
+        .menu-button {
+            position: relative;
+            margin-right: 10px;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            cursor: pointer;
+        }
+        .menu-line {
+            display: block;
+            width: 100%;
+            height: 4px;
+            background-color: #ffffff;
+            border-radius: 3px;
+            transition: all 0.5s ease;
+            transform-origin: 92% center;
+        }
+        .menu-checkbox:checked ~ .menu-button .menu-line:nth-of-type(1) {
+            transform: rotate(-45deg) scale(1.4);
+        }
+        .menu-checkbox:checked ~ .menu-button .menu-line:nth-of-type(2) {
+            background-color: transparent;
+        }
+        .menu-checkbox:checked ~ .menu-button .menu-line:nth-of-type(3) {
+            transform: rotate(45deg) scale(1.4);
+        }
+
+
+        nav {
+            position: absolute;
+            top: 70px;
+            left: 0;
+            width: 100%;
+            background-color: #181818;
+            z-index: 2;
+        }
+
+        nav a {
+            display: block;
+            padding: 0 10px;
+            line-height: 50px;
+
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 1.1rem;
+            font-weight: bold;
+
+            transition: height 0.5s ease;
+            height: 0;
+            overflow: hidden;
+
+            border-left: 8px solid transparent;
+        }
+        nav a:hover {
+            text-decoration: none; /* need this to override default 'a' behaviour */
+        }
+        .menu-checkbox:checked ~ nav a {
+            height: 50px;
+        }
+        nav a.selected, nav a:hover {
+            border-left-color: #ffc100;
+        }
+
+        .nav-children a {
+            font-size: 0.8em;
+            margin-left: 8px;
+            border-left-width: 5px;
+        }
+    }
+
+
+
+    /* NAV BAR */
+    /* (desktop) */
+    @media (min-width: 651px) and (min-height: 501px) {
+        background-color: #181818;
+        height: 100px;
+        padding: 20px calc((100vw - 1000px) / 2);
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        .logo {
+            margin-left: 20px;
+            height: 100%;
+            object-fit: cover;
+            object-position: left top;
+            color: #ffffff; /* For alt text */
+        }
+
+        .menu-checkbox {
+            display: none;
+        }
+        .menu-button {
+            display: none;
+        }
+
+
+        nav {
+            display: flex;
+            flex-direction: row;
+        }
+
+        nav a {
+            display: block;
+
+            margin-right: 10px;
+            padding: 10px 10px;
+
+            text-decoration: none;
+            color: #ffffff;
+
+            border-top: 4px solid transparent;
+            border-bottom: 4px solid transparent;
+        }
+        nav a:hover {
+            text-decoration: none; /* need this to override default 'a' behaviour */
+        }
+
+        nav a.selected, nav a.child-is-selected, nav a:hover {
+            border-top-color: #ffc100;
+        }
+
+        .nav-parent {
+            position: relative;
+        }
+        .nav-children {
+            position: absolute;
+            top: 100%;
+            background-color: #181818;
+            width: max-content;
+            z-index: 1;
+            height: 0;
+            overflow: hidden;
+        }
+        .nav-parent:hover .nav-children {
+            height: 46px;
+        }
+        .nav-children a {
+            margin: 0px;
+            font-size: 0.8em;
+        }
+    }
+
+    
+    .logo-container {
+        height: 100%;
+    }
+
+}

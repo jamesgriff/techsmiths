@@ -1,0 +1,122 @@
+
+.picture-name-quote {
+
+    @media (max-width: 600px) {
+        padding: 10px 20px;
+
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-end;
+
+
+        picture {
+            display: block;
+            width: 50%;
+        }
+
+        .name {
+            width: 50%;
+            font-size: 1.5rem;
+            font-weight: bold;
+            padding-left: 10px;
+            padding-bottom: 10px;
+        }
+
+        p.quote {
+            width: 100%;
+            margin: 0;
+            line-height: 1.5;
+        }
+    }
+
+    @media (min-width: 601px) {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 0 20px;
+        min-height: 170px;
+
+        
+        picture {
+            display: block;
+            width: 150px;
+            height: 150px;
+        }
+
+        .name {
+            margin-top: -150px;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        &:nth-of-type(odd) .name {
+            margin-left: 170px;
+        }
+        &:nth-of-type(even) .name {
+            margin-right: 170px;
+        }
+
+        p.quote {
+            margin: 0;
+            line-height: 1.5;
+        }
+        &:nth-of-type(odd) p.quote {
+            margin-left: 170px;
+        }
+        &:nth-of-type(even) p.quote {
+            margin-right: 170px;
+        }
+    }
+
+    &:nth-of-type(even) {
+        direction: rtl;
+    }
+    &:nth-of-type(even) picture {
+        direction: ltr;
+        text-align: right;
+    }
+    &:nth-of-type(even) .name {
+        direction: ltr;
+        text-align: right;
+    }
+    &:nth-of-type(even) p.quote {
+        direction: ltr;
+        text-align: right;
+    }
+
+
+    picture img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        max-width: 150px;
+        border-radius: 50%;
+    }
+    &:nth-of-type(odd) picture img {
+        margin-left: auto;
+    }
+    &:nth-of-type(even) picture img {
+        margin-right: auto;
+    }
+
+    p.quote::before {
+        content: '\201C';
+        font-size: 2rem;
+        font-weight: bold;
+        vertical-align: bottom;
+        padding-right: 5px;
+    }
+    p.quote::after {
+        content: '\201D';
+        font-size: 2rem;
+        font-weight: bold;
+        vertical-align: top;
+        padding-left: 10px;
+    }
+    @media (min-width: 601px) {
+        &:nth-of-type(odd) p.quote::after {
+            position: absolute;
+        }
+    }
+
+}
