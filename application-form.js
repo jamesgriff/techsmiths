@@ -1,5 +1,4 @@
 
-
 function cvFileUploadChanged() {
     let cv = document.getElementById('cv_fileUpload');
     let cv_filename = document.getElementById('cv_filename');
